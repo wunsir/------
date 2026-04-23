@@ -24,7 +24,7 @@ export function RebornPage() {
 
       <SectionBlock
         description="当代新生页先让用户看到演变链路：它怎样改入口、改媒介、改叙事，但仍保留皮影最核心的辨识度。"
-        eyebrow="Reframed Today"
+        eyebrow="新幕开场"
         title="让旧影继续进入今天"
       >
         <div className="grid gap-4 lg:grid-cols-2">
@@ -51,7 +51,7 @@ export function RebornPage() {
 
       <SectionBlock
         description="角色卡模块不去追求炫技，而是把当代改写落在具体人物上：哪一部分被删减，哪一部分被放大，为什么仍然像皮影。"
-        eyebrow="Rewritten Roles"
+        eyebrow="角色改写"
         title="角色先被重写，气质才会变成今天的语言"
       >
         <div className="grid gap-4 lg:grid-cols-3">
@@ -107,7 +107,7 @@ export function RebornPage() {
 
       <SectionBlock
         description="展演与案例模块负责把“更新”落在真实观看经验上，让用户看到皮影如何离开传统戏台，却没有失去现场感。"
-        eyebrow="Cases & Shows"
+        eyebrow="当代表演"
         title="当代案例不是注脚，而是新的演出现场"
       >
         <div className="grid gap-4 lg:grid-cols-2">
@@ -153,7 +153,7 @@ export function RebornPage() {
 
       <SectionBlock
         description="这里不把更新写成趋势口号，而是把三条真正的变化轨道拆开：入口变了、表演关系变了、视觉句法也变了。"
-        eyebrow="Update Tracks"
+        eyebrow="更新轨道"
         title="更新不是换皮，而是换入口、换表演、换视觉句法"
       >
         <div className="grid gap-4 lg:grid-cols-3">

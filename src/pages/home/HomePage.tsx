@@ -61,7 +61,7 @@ export function HomePage() {
 
       <SectionBlock
         description="首页不抢王牌页风头，而是像导演分镜一样把三个分主题按节奏摆上台面，让用户知道该先去哪、为什么去。"
-        eyebrow="Curated Entry"
+        eyebrow="章节导览"
         title="今夜上演三折"
       >
         <div className="grid gap-4 lg:grid-cols-3">
@@ -73,7 +73,7 @@ export function HomePage() {
 
       <SectionBlock
         description="首页像导演分镜一样给出建议顺序：先见最强光影，再回到工艺细部，最后把旧戏带入今天。你也可以随时改道。"
-        eyebrow="Director Cue"
+        eyebrow="导演提示"
         title="先去哪一页"
       >
         <div className="grid gap-4 lg:grid-cols-3">

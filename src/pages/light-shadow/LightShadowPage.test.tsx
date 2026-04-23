@@ -17,6 +17,9 @@ describe('LightShadowPage', () => {
     expect(
       screen.getByRole('heading', { level: 1, name: '灯亮，影便活了' }),
     ).toBeInTheDocument()
+    expect(screen.getByText('影人筛选')).toBeInTheDocument()
+    expect(screen.getByText('戏台瞬间')).toBeInTheDocument()
+    expect(screen.getByText('开场脉络')).toBeInTheDocument()
     expect(screen.getByText('穆桂英')).toBeInTheDocument()
     expect(screen.getByText('钟馗')).toBeInTheDocument()
 

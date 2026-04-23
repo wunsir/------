@@ -17,6 +17,8 @@ describe('HomePage', () => {
     expect(
       screen.getByRole('heading', { level: 2, name: '今夜上演三折' }),
     ).toBeInTheDocument()
+    expect(screen.getByText('章节导览')).toBeInTheDocument()
+    expect(screen.getByText('导演提示')).toBeInTheDocument()
 
     expect(screen.getByRole('link', { name: '进入制作工艺' })).toHaveAttribute(
       'href',
