@@ -1,0 +1,19 @@
+:root {
+  --stage-bg: #070505;
+  --stage-bg-soft: #120a0a;
+  --stage-panel: rgba(14, 10, 10, 0.78);
+  --stage-panel-strong: rgba(20, 14, 14, 0.92);
+  --stage-paper: #f5ead0;
+  --stage-ink-soft: rgba(235, 221, 197, 0.78);
+  --stage-muted: rgba(214, 186, 145, 0.62);
+  --stage-gold: #efc471;
+  --stage-gold-soft: rgba(239, 196, 113, 0.16);
+  --stage-crimson: #7b231b;
+  --stage-amber: #ffb257;
+  --stage-border: rgba(255, 255, 255, 0.1);
+  --shadow-stage:
+    0 36px 90px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  --font-display: 'STKaiti', 'KaiTi', 'Noto Serif SC', serif;
+  --font-sans: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+}

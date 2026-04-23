@@ -1,0 +1,150 @@
+@import 'tailwindcss';
+@import './tokens.css';
+
+@theme {
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    background: var(--stage-bg);
+    color: var(--stage-paper);
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100svh;
+    background:
+      radial-gradient(circle at top, rgba(118, 31, 22, 0.18), transparent 26%),
+      radial-gradient(circle at 20% 20%, rgba(255, 182, 84, 0.08), transparent 24%),
+      linear-gradient(180deg, #120909 0%, #070505 48%, #130909 100%);
+    color: var(--stage-paper);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  #root {
+    min-height: 100svh;
+  }
+}
+
+@layer components {
+  .stage-panel {
+    border: 1px solid var(--stage-border);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 16%),
+      linear-gradient(180deg, var(--stage-panel), var(--stage-panel-strong));
+    box-shadow: var(--shadow-stage);
+    border-radius: 1.75rem;
+  }
+
+  .stage-card {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.5rem;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 20%),
+      rgba(11, 8, 8, 0.68);
+    padding: 1.35rem;
+    box-shadow:
+      0 22px 50px rgba(0, 0, 0, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  }
+
+  .stage-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    border: 1px solid rgba(240, 197, 112, 0.32);
+    background: linear-gradient(180deg, rgba(240, 197, 112, 0.18), rgba(240, 197, 112, 0.08));
+    padding: 0.8rem 1.2rem;
+    color: var(--stage-paper);
+    transition:
+      transform 180ms ease,
+      border-color 180ms ease,
+      background 180ms ease;
+  }
+
+  .stage-cta:hover {
+    transform: translateY(-1px);
+    border-color: rgba(240, 197, 112, 0.52);
+  }
+
+  .stage-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 0.8rem 1.2rem;
+    color: var(--stage-ink-soft);
+    transition:
+      color 180ms ease,
+      border-color 180ms ease,
+      transform 180ms ease;
+  }
+
+  .stage-link:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255, 255, 255, 0.24);
+    color: var(--stage-paper);
+  }
+}
+
+.stage-glow {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 187, 96, 0.08), transparent 30%),
+    radial-gradient(circle at 5% 0%, rgba(255, 255, 255, 0.03), transparent 25%);
+}
+
+.curtain-overlay {
+  background:
+    linear-gradient(90deg, rgba(72, 17, 14, 0.22) 0%, transparent 9%, transparent 91%, rgba(72, 17, 14, 0.22) 100%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(91, 22, 16, 0.06) 0,
+      rgba(91, 22, 16, 0.06) 10px,
+      rgba(0, 0, 0, 0) 10px,
+      rgba(0, 0, 0, 0) 18px
+    );
+  opacity: 0.7;
+}
+
+.light-orb {
+  background:
+    radial-gradient(circle, rgba(255, 221, 158, 0.7) 0%, rgba(255, 183, 84, 0.28) 40%, rgba(255, 183, 84, 0) 74%);
+  filter: blur(2px);
+}
+
+.light-beam {
+  background: radial-gradient(circle, rgba(255, 220, 166, 0.35), rgba(255, 176, 78, 0.08) 42%, transparent 72%);
+  filter: blur(10px);
+}
+
+.shadow-puppet {
+  clip-path: polygon(50% 0%, 78% 14%, 88% 42%, 82% 78%, 68% 100%, 32% 100%, 18% 78%, 12% 42%, 22% 14%);
+}
+
+@media (max-width: 640px) {
+  .stage-card {
+    padding: 1.1rem;
+  }
+}
