@@ -8,7 +8,10 @@ function renderRoute(initialEntry: string) {
     initialEntries: [initialEntry],
   })
 
-  return render(<RouterProvider router={router} />)
+  return {
+    router,
+    ...render(<RouterProvider router={router} />),
+  }
 }
 
 describe('app routing', () => {
@@ -45,7 +48,7 @@ describe('app routing', () => {
   })
 
   it('recovers unknown paths by redirecting back to home', async () => {
-    renderRoute('/missing-scene')
+    const { router } = renderRoute('/missing-scene')
 
     await waitFor(() => {
       expect(
@@ -54,6 +57,10 @@ describe('app routing', () => {
           name: '一戏入影',
         }),
       ).toBeInTheDocument()
+    })
+
+    await waitFor(() => {
+      expect(router.state.location.pathname).toBe('/')
     })
   })
 })

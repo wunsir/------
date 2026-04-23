@@ -56,7 +56,7 @@ export function LightShadowPage() {
       />
 
       <SectionBlock
-        description="搜索 / 筛选在 MVP 中不做复杂检索，而是把角色类型当作一组导演开关。切换一次，整组人物气质就会变。"
+        description="这里不做复杂检索，而是把角色类型当作一组导演开关。切换一次，整组人物的气口和场面就会变。"
         eyebrow="Character Filter"
         title="先看谁被灯点亮"
       >
@@ -167,7 +167,7 @@ export function LightShadowPage() {
       </SectionBlock>
 
       <SectionBlock
-        description="时间线这里只做“一场戏如何被点亮”的主链路。历史信息可以后续补，但不能稀释掉戏台上的即时感。"
+        description="时间线只抓住一场戏如何被点亮的主链路：灯先起，影才现，人物在几次提杆与停顿之间真正立住。"
         eyebrow="Performance Timeline"
         title="一场戏如何从幕后走到幕前"
       >

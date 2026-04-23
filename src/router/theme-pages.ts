@@ -24,7 +24,7 @@ export const themeRoutes: ThemeRouteEntry[] = [
       title: '雕一身骨',
       subtitle: '从选皮到组装，影人的筋骨都藏在刀口和关节里。',
       intro:
-        '制作工艺页强调手作感和层次感，适合后续窗口继续填充工艺步骤、材料细节和角色构造说明。',
+        '制作工艺页把注意力放在手作层次上，让人看见一位影人如何从皮料、刀工与关节里慢慢长出筋骨。',
       accent: 'crimson',
       heroMode: 'craft',
     },
@@ -54,7 +54,7 @@ export const themeRoutes: ThemeRouteEntry[] = [
       title: '旧影入新幕',
       subtitle: '皮影戏不是被封存的旧东西，而是仍能进入今天视觉语境的活内容。',
       intro:
-        '当代新生页聚焦视觉再设计、传播语境更新和现代展陈形式，为后续扩写当代案例预留了清晰插槽。',
+        '当代新生页聚焦视觉再设计、传播语境更新与现代展陈，让人看见旧影如何继续进入今天的现场。',
       accent: 'paper',
       heroMode: 'modern',
     },

@@ -30,9 +30,11 @@ export function StageLayout() {
               影
             </span>
             <div className="space-y-1">
-              <p className="font-display text-2xl text-[var(--stage-paper)]">一戏入影</p>
-              <p className="text-xs uppercase tracking-[0.35em] text-[var(--stage-muted)]">
-                Shadow Puppetry Demo
+              <p className="font-display text-xl text-[var(--stage-paper)] sm:text-2xl">
+                一戏入影
+              </p>
+              <p className="text-[10px] uppercase tracking-[0.24em] text-[var(--stage-muted)] sm:text-xs sm:tracking-[0.35em]">
+                Shadow Puppet Theatre
               </p>
             </div>
           </NavLink>
@@ -75,7 +77,7 @@ export function StageLayout() {
 
         <footer className="mt-8 grid gap-4 px-2 text-sm text-[var(--stage-ink-soft)] sm:grid-cols-[1fr_auto] sm:items-end">
           <p className="max-w-2xl">
-            这一版先冻结戏台、路由、视觉 token 与共享接口。后续窗口只需要在既有类型和插槽里补内容，不反改主骨架。
+            一盏灯、一方幕、一身影，旧戏不必退回过去，也能在今天被重新看见。
           </p>
           <p className="text-xs uppercase tracking-[0.32em] text-[var(--stage-muted)]">
             暗场 · 幕布 · 暖光 · 剪影

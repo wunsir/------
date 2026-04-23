@@ -79,11 +79,11 @@ export function PageHero({
             <p className="text-xs font-semibold uppercase tracking-[0.45em] text-[var(--stage-muted)]">
               {kicker}
             </p>
-            <h1 className="font-display text-5xl text-[var(--stage-paper)] sm:text-6xl lg:text-7xl">
+            <h1 className="font-display text-4xl leading-[0.95] text-[var(--stage-paper)] sm:text-6xl lg:text-7xl">
               {title}
             </h1>
           </div>
-          <p className="max-w-2xl text-lg leading-8 text-[var(--stage-paper)]/86 sm:text-xl">
+          <p className="max-w-2xl text-base leading-8 text-[var(--stage-paper)]/86 sm:text-xl">
             {subtitle}
           </p>
           <p className="max-w-2xl text-sm leading-7 text-[var(--stage-ink-soft)] sm:text-base">

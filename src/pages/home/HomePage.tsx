@@ -72,7 +72,7 @@ export function HomePage() {
       </SectionBlock>
 
       <SectionBlock
-        description="首页承担导演式引导，给出建议顺序，但仍然保留自由浏览。这里先把推荐逻辑冻结，后续其他窗口只需要往对应页面继续填内容。"
+        description="首页像导演分镜一样给出建议顺序：先见最强光影，再回到工艺细部，最后把旧戏带入今天。你也可以随时改道。"
         eyebrow="Director Cue"
         title="先去哪一页"
       >

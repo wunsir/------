@@ -1,10 +1,11 @@
-import { Navigate, type RouteObject } from 'react-router-dom'
+import type { RouteObject } from 'react-router-dom'
 
 import { StageLayout } from '../layout/StageLayout'
 import { CraftPage } from '../pages/craft/CraftPage'
 import { HomePage } from '../pages/home/HomePage'
 import { LightShadowPage } from '../pages/light-shadow/LightShadowPage'
 import { RebornPage } from '../pages/reborn/RebornPage'
+import { UnknownRoutePage } from './UnknownRoutePage'
 
 export const appRoutes: RouteObject[] = [
   {
@@ -29,7 +30,7 @@ export const appRoutes: RouteObject[] = [
       },
       {
         path: '*',
-        element: <Navigate replace to="/" />,
+        element: <UnknownRoutePage />,
       },
     ],
   },
