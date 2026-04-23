@@ -1,6 +1,7 @@
 import { render, screen, waitFor, within } from '@testing-library/react'
 import { RouterProvider, createMemoryRouter } from 'react-router-dom'
 
+import { AppRouter } from './AppRouter'
 import { appRoutes } from './routes'
 
 function renderRoute(initialEntry: string) {
@@ -62,5 +63,20 @@ describe('app routing', () => {
     await waitFor(() => {
       expect(router.state.location.pathname).toBe('/')
     })
+  })
+
+  it('renders GitHub Pages hash routes from the current URL', async () => {
+    window.history.replaceState({}, '', '/shadow-puppetry-exhibit/#/craft')
+
+    render(<AppRouter />)
+
+    expect(
+      await screen.findByRole('heading', {
+        level: 1,
+        name: '雕一身骨',
+      }),
+    ).toBeInTheDocument()
+
+    window.history.replaceState({}, '', '/')
   })
 })

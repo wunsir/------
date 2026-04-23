@@ -1,9 +1,10 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { useMemo } from 'react'
+import { RouterProvider, createHashRouter } from 'react-router-dom'
 
 import { appRoutes } from './routes'
 
-const router = createBrowserRouter(appRoutes)
-
 export function AppRouter() {
+  const router = useMemo(() => createHashRouter(appRoutes), [])
+
   return <RouterProvider router={router} />
 }

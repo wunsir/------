@@ -4,6 +4,7 @@ import { defineConfig } from 'vitest/config'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/shadow-puppetry-exhibit/',
   plugins: [react(), tailwindcss()],
   test: {
     environment: 'jsdom',
