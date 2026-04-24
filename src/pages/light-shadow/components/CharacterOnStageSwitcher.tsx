@@ -19,11 +19,11 @@ export function CharacterOnStageSwitcher({
   return (
     <div className="rounded-2xl border border-white/10 bg-[rgba(10,8,8,0.44)] px-3 py-2.5 sm:px-4">
       <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-        <p className="text-[10px] uppercase tracking-[0.28em] text-[var(--stage-muted)]">换人物上场</p>
+        <p className="text-[10px] uppercase tracking-[0.28em] text-[var(--stage-muted)]">换角色</p>
 
         <div className="flex flex-1 flex-wrap gap-1.5">
           {roleOptions.map((option) => {
-            const label = `${option.label}上场`
+            const label = option.label
 
             return (
               <button
@@ -50,7 +50,7 @@ export function CharacterOnStageSwitcher({
           className="text-[11px] text-[var(--stage-muted)]"
           data-testid="on-stage-announcer"
         >
-          {activeCharacter.name}上场
+          {activeCharacter.name}已上场
         </p>
       </div>
     </div>

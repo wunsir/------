@@ -12,33 +12,33 @@ describe('RebornPage', () => {
     )
 
     expect(
-      screen.getByRole('heading', { level: 1, name: '旧影入新幕' }),
+      screen.getByRole('heading', { level: 1, name: '皮影来到今天' }),
     ).toBeInTheDocument()
 
     expect(
-      screen.getByRole('heading', { level: 2, name: '旧影进入今天，先从视觉句法开始' }),
+      screen.getByRole('heading', { level: 2, name: '先把影人的样子整理清楚' }),
     ).toBeInTheDocument()
-    expect(screen.getByText('视觉链路')).toBeInTheDocument()
-    expect(screen.getByText('视觉再设计：轮廓提纯与纹样简化')).toBeInTheDocument()
+    expect(screen.getAllByText('形象整理').length).toBeGreaterThan(0)
+    expect(screen.getByText('整理形象：简化轮廓和纹样')).toBeInTheDocument()
 
     expect(
-      screen.getByRole('heading', { level: 2, name: '先改轮廓、纹样和媒介语法' }),
+      screen.getByRole('heading', { level: 2, name: '保留一眼能认出的部分' }),
     ).toBeInTheDocument()
-    expect(screen.getByText('视觉档案')).toBeInTheDocument()
-    expect(screen.getByText('剪影提纯武生样本')).toBeInTheDocument()
+    expect(screen.getByText('角色样式')).toBeInTheDocument()
+    expect(screen.getByText('剪影简化武生')).toBeInTheDocument()
 
     expect(
-      screen.getByRole('heading', { level: 2, name: '传播和表演，服务于视觉更新的入口' }),
+      screen.getByRole('heading', { level: 2, name: '也在展馆和舞台里出现' }),
     ).toBeInTheDocument()
-    expect(screen.getByText('传播与表演')).toBeInTheDocument()
-    expect(screen.getByText('博物馆展陈：皮影轮廓导览样本')).toBeInTheDocument()
+    expect(screen.getByText('展陈与舞台')).toBeInTheDocument()
+    expect(screen.getByText('博物馆展陈：看清皮影轮廓')).toBeInTheDocument()
 
     expect(
-      screen.getByRole('heading', { level: 2, name: '更新不是换皮，而是换入口、换表演、换视觉句法' }),
+      screen.getByRole('heading', { level: 2, name: '今天的皮影，不只在老戏台上' }),
     ).toBeInTheDocument()
-    expect(screen.getByText('更新轨道')).toBeInTheDocument()
-    expect(screen.getByText('传播方式更新')).toBeInTheDocument()
-    expect(screen.getByText('视觉再设计更新')).toBeInTheDocument()
+    expect(screen.getByText('今天在哪儿看见')).toBeInTheDocument()
+    expect(screen.getByText('新的传播场景')).toBeInTheDocument()
+    expect(screen.getAllByText('形象整理').length).toBeGreaterThan(0)
 
     expect(screen.getAllByRole('heading', { level: 2 }).length).toBeGreaterThanOrEqual(4)
     expect(screen.getAllByRole('heading', { level: 3 }).length).toBeGreaterThanOrEqual(8)
@@ -69,8 +69,8 @@ describe('RebornPage', () => {
       </MemoryRouter>,
     )
 
-    expect(screen.getByText('转译档案')).toBeInTheDocument()
-    expect(screen.getByText('来源线索')).toBeInTheDocument()
+    expect(screen.getByText('设计档案')).toBeInTheDocument()
+    expect(screen.getByText('资料来源')).toBeInTheDocument()
     expect(screen.getByText('中国非遗馆与地方博物馆皮影展陈说明')).toBeInTheDocument()
     expect(screen.getByText('高校设计课程与工作坊公开成果（皮影纹样再设计）')).toBeInTheDocument()
     expect(screen.getByText('公开品牌联名与文创发布中的皮影视觉应用')).toBeInTheDocument()

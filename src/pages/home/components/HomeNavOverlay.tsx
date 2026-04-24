@@ -25,7 +25,7 @@ export function HomeNavOverlay({ visible }: HomeNavOverlayProps) {
       </NavLink>
 
       <nav
-        aria-label="首页主导航"
+        aria-label="主导航"
         className="home-nav-links home-nav-links-desktop"
       >
         {themeRoutes.map((entry) => (
@@ -45,7 +45,7 @@ export function HomeNavOverlay({ visible }: HomeNavOverlayProps) {
       <button
         aria-controls="home-mobile-nav-links"
         aria-expanded={menuOpen}
-        aria-label={menuOpen ? '关闭首页章节菜单' : '打开首页章节菜单'}
+        aria-label={menuOpen ? '关闭章节菜单' : '打开章节菜单'}
         className="home-nav-toggle"
         type="button"
         onClick={() => {
@@ -61,7 +61,7 @@ export function HomeNavOverlay({ visible }: HomeNavOverlayProps) {
 
       {menuOpen ? (
         <nav
-          aria-label="首页移动章节菜单"
+          aria-label="章节菜单"
           className="home-nav-links home-nav-links-mobile is-open"
           id="home-mobile-nav-links"
         >

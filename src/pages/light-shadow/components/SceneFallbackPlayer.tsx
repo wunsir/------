@@ -14,9 +14,9 @@ export function SceneFallbackPlayer({ active }: SceneFallbackPlayerProps) {
       data-active={active ? 'true' : 'false'}
       data-testid="scene-fallback-player"
     >
-      <span className="sm:hidden">灯位一偏，影势随之改变</span>
+      <span className="sm:hidden">移灯，影子跟着变</span>
       <span className="hidden sm:inline">
-        {active ? '自动中' : '接管中'} 灯位一偏，影势随之改变
+        {active ? '自动演示' : '手动控灯'}：移灯，影子跟着变
       </span>
     </div>
   )

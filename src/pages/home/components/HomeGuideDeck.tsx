@@ -8,18 +8,18 @@ type HomeGuideDeckProps = {
 
 const guideCopy = {
   'light-shadow': {
-    eyebrow: '先入主戏',
-    line: '先让一束灯把影子照活，再去看幕后操演如何成立。',
+    eyebrow: '先看光影',
+    line: '先动一动灯，看影子怎样在幕上变清楚。',
     toneClassName: 'home-guide-card-amber',
   },
   craft: {
-    eyebrow: '再看筋骨',
-    line: '刀口、关节、透光和组装，决定一位影人为什么能动。',
+    eyebrow: '再看手艺',
+    line: '从牛皮、刀口、颜色到关节，看影人怎样做出来。',
     toneClassName: 'home-guide-card-crimson',
   },
   reborn: {
-    eyebrow: '最后回到今天',
-    line: '旧影进入新幕，落到今天的展陈、传播和视觉再设计。',
+    eyebrow: '再看今天',
+    line: '看皮影形象怎样出现在展陈、课程和新的视觉设计里。',
     toneClassName: 'home-guide-card-paper',
   },
 } as const
@@ -58,11 +58,11 @@ export function HomeGuideDeck({ visible }: HomeGuideDeckProps) {
               <p className="home-guide-card-line">{copy.line}</p>
             </div>
             <Link
-              aria-label={`进入${entry.navLabel}`}
+              aria-label={`查看${entry.navLabel}`}
               className="home-guide-card-link"
               to={entry.path}
             >
-              进入章节
+              查看
             </Link>
           </article>
         )

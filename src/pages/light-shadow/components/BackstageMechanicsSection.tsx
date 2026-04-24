@@ -16,10 +16,10 @@ export function BackstageMechanicsSection({
       <div className="pointer-events-none absolute left-[-10%] top-0 h-40 w-64 rounded-full bg-[radial-gradient(circle,rgba(255,178,87,0.22),rgba(255,178,87,0))] blur-2xl" />
 
       <header className="mb-6 max-w-3xl space-y-3">
-        <p className="text-xs uppercase tracking-[0.36em] text-[var(--stage-muted)]">幕布之后的操演逻辑</p>
-        <h2 className="font-display text-3xl text-[var(--stage-paper)] sm:text-4xl">灯位变，手上节奏也要变</h2>
+        <p className="text-xs uppercase tracking-[0.36em] text-[var(--stage-muted)]">幕布后面</p>
+        <h2 className="font-display text-3xl text-[var(--stage-paper)] sm:text-4xl">灯一动，手也要跟着调</h2>
         <p className="text-sm leading-7 text-[var(--stage-ink-soft)] sm:text-base">
-          台前看到的是影，台后真正改变的是提杆力度、翻腕停顿与协同拍点。
+          台前看到的是影，台后要同时控制提杆、翻腕和灯光节奏。
         </p>
       </header>
 

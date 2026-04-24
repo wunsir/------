@@ -17,7 +17,7 @@ describe('LightShadowPage', () => {
     renderPage()
 
     expect(
-      screen.getByRole('heading', { level: 1, name: '灯亮，影便活了' }),
+      screen.getByRole('heading', { level: 1, name: '灯亮，影就活了' }),
     ).toBeInTheDocument()
 
     const orderedSections = screen
@@ -36,7 +36,7 @@ describe('LightShadowPage', () => {
     renderPage()
 
     expect(screen.getByTestId('scene-fallback-player')).toBeInTheDocument()
-    expect(screen.getByText('灯位一偏，影势随之改变')).toHaveClass('sm:hidden')
+    expect(screen.getByText('移灯，影子跟着变')).toHaveClass('sm:hidden')
     expect(screen.getByTestId('l1-hero-stage')).toHaveAttribute('data-scene-phase', 'auto-demo')
   })
 
@@ -54,10 +54,10 @@ describe('LightShadowPage', () => {
 
     expect(screen.getByTestId('stage-actor-name')).toHaveTextContent('穆桂英')
 
-    await user.click(screen.getByRole('button', { name: '净角上场' }))
+    await user.click(screen.getByRole('button', { name: '净角' }))
 
     expect(screen.getByTestId('stage-actor-name')).toHaveTextContent('钟馗')
-    expect(screen.getByTestId('on-stage-announcer')).toHaveTextContent('钟馗上场')
+    expect(screen.getByTestId('on-stage-announcer')).toHaveTextContent('钟馗已上场')
   })
 
   it('updates scene feedback for both mouse and touch input', () => {

@@ -12,10 +12,10 @@ export function PerformanceTimelineSection({
   return (
     <section className="stage-panel p-6 sm:p-8 lg:p-10">
       <header className="mb-6 space-y-3">
-        <p className="text-xs uppercase tracking-[0.36em] text-[var(--stage-muted)]">一场戏如何成立的时间线</p>
-        <h2 className="font-display text-3xl text-[var(--stage-paper)] sm:text-4xl">从点灯到落幕，戏的主链路只有一条</h2>
+        <p className="text-xs uppercase tracking-[0.36em] text-[var(--stage-muted)]">一场戏的时间线</p>
+        <h2 className="font-display text-3xl text-[var(--stage-paper)] sm:text-4xl">从点灯到落幕</h2>
         <p className="text-sm leading-7 text-[var(--stage-ink-soft)] sm:text-base">
-          把当前上场角色 <span className="text-[var(--stage-paper)]">{activeCharacter.name}</span> 放进同一条舞台时间线里，观众会更容易理解一场戏为什么能立住。
+          把当前上场角色 <span className="text-[var(--stage-paper)]">{activeCharacter.name}</span> 放进这条时间线里，可以看清一场皮影戏怎样一步步演起来。
         </p>
       </header>
 

@@ -67,7 +67,7 @@ export function LightShadowSceneShell({
           lampRender={lampRender}
           onLampInput={onLampInput}
           onLampInputEnd={onLampInputEnd}
-          operationHint="按住幕面移动灯位"
+          operationHint="按住幕面移灯"
           scenePhase={scenePhase}
           switcher={
             <CharacterOnStageSwitcher

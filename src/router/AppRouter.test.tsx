@@ -55,9 +55,9 @@ describe('app routing', () => {
   })
 
   it.each([
-    ['/craft', '雕一身骨'],
-    ['/light-shadow', '灯亮，影便活了'],
-    ['/reborn', '旧影入新幕'],
+    ['/craft', '影人怎样做成'],
+    ['/light-shadow', '灯亮，影就活了'],
+    ['/reborn', '皮影来到今天'],
   ])('renders %s with the expected hero heading', (path, heading) => {
     renderRoute(path)
 
@@ -75,11 +75,11 @@ describe('app routing', () => {
       'href',
       '/craft',
     )
-    expect(within(navigation).getByRole('link', { name: '光影美学' })).toHaveAttribute(
+    expect(within(navigation).getByRole('link', { name: '灯与影' })).toHaveAttribute(
       'href',
       '/light-shadow',
     )
-    expect(within(navigation).getByRole('link', { name: '当代新生' })).toHaveAttribute(
+    expect(within(navigation).getByRole('link', { name: '今天的皮影' })).toHaveAttribute(
       'href',
       '/reborn',
     )
@@ -98,18 +98,18 @@ describe('app routing', () => {
 
     advanceScene(5600)
 
-    const navigation = screen.getByRole('navigation', { name: '首页主导航' })
+    const navigation = screen.getByRole('navigation', { name: '主导航' })
 
     expect(within(navigation).getByRole('link', { name: '首页' })).toHaveAttribute('href', '/')
     expect(within(navigation).getByRole('link', { name: '制作工艺' })).toHaveAttribute(
       'href',
       '/craft',
     )
-    expect(within(navigation).getByRole('link', { name: '光影美学' })).toHaveAttribute(
+    expect(within(navigation).getByRole('link', { name: '灯与影' })).toHaveAttribute(
       'href',
       '/light-shadow',
     )
-    expect(within(navigation).getByRole('link', { name: '当代新生' })).toHaveAttribute(
+    expect(within(navigation).getByRole('link', { name: '今天的皮影' })).toHaveAttribute(
       'href',
       '/reborn',
     )
@@ -139,7 +139,7 @@ describe('app routing', () => {
     expect(
       screen.getByRole('heading', {
         level: 1,
-        name: '雕一身骨',
+        name: '影人怎样做成',
       }),
     ).toBeInTheDocument()
 
@@ -155,7 +155,7 @@ describe('app routing', () => {
     expect(
       screen.getByRole('heading', {
         level: 1,
-        name: '灯亮，影便活了',
+        name: '灯亮，影就活了',
       }),
     ).toBeInTheDocument()
 

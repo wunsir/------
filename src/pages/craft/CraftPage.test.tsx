@@ -12,35 +12,35 @@ describe('CraftPage', () => {
     )
 
     expect(
-      screen.getByRole('heading', { level: 1, name: '雕一身骨' }),
+      screen.getByRole('heading', { level: 1, name: '影人怎样做成' }),
     ).toBeInTheDocument()
 
     expect(
-      screen.getByRole('heading', { level: 2, name: '从一张皮到一位影人' }),
+      screen.getByRole('heading', { level: 2, name: '一张皮，怎样变成影人' }),
     ).toBeInTheDocument()
-    expect(screen.getByText('工艺主线')).toBeInTheDocument()
-    expect(screen.getByText('制皮起底：回软与刮薄')).toBeInTheDocument()
+    expect(screen.getByText('制作步骤')).toBeInTheDocument()
+    expect(screen.getByText('制皮：回软、刮薄、晾平')).toBeInTheDocument()
 
     expect(
-      screen.getByRole('heading', { level: 2, name: '刀口之后，角色才真正有了面相' }),
+      screen.getByRole('heading', { level: 2, name: '角色的样子，是一刀一刀做出来的' }),
     ).toBeInTheDocument()
-    expect(screen.getByText('影人成相')).toBeInTheDocument()
+    expect(screen.getByText('角色做法')).toBeInTheDocument()
     expect(
-      screen.getByRole('heading', { level: 3, name: '华县旦角纹样样本' }),
-    ).toBeInTheDocument()
-
-    expect(
-      screen.getByRole('heading', { level: 2, name: '幕后场景先把一出戏的骨肉搭起来' }),
-    ).toBeInTheDocument()
-    expect(screen.getByText('幕后片段')).toBeInTheDocument()
-    expect(
-      screen.getByRole('heading', { level: 3, name: '工坊实录：牛皮刮制与晾皮' }),
+      screen.getByRole('heading', { level: 3, name: '华县旦角纹样' }),
     ).toBeInTheDocument()
 
     expect(
-      screen.getByRole('heading', { level: 2, name: '一位影人的层次，不只在正面图案' }),
+      screen.getByRole('heading', { level: 2, name: '把材料和关节放回台后看' }),
     ).toBeInTheDocument()
-    expect(screen.getAllByText('层次拆解').length).toBeGreaterThan(0)
+    expect(screen.getByText('台后片段')).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { level: 3, name: '工坊记录：牛皮刮制与晾皮' }),
+    ).toBeInTheDocument()
+
+    expect(
+      screen.getByRole('heading', { level: 2, name: '图案之外，还有厚薄、透光和杆路' }),
+    ).toBeInTheDocument()
+    expect(screen.getAllByText('工艺拆解').length).toBeGreaterThan(0)
     expect(
       screen.getByRole('heading', { level: 3, name: '牛皮回软与刮薄' }),
     ).toBeInTheDocument()
@@ -79,7 +79,7 @@ describe('CraftPage', () => {
     )
 
     expect(screen.getByText('工艺案台')).toBeInTheDocument()
-    expect(screen.getByText('资料锚点')).toBeInTheDocument()
+    expect(screen.getByText('资料依据')).toBeInTheDocument()
     expect(screen.getByText('国家级非遗名录：华县皮影戏（陕西渭南）')).toBeInTheDocument()
     expect(screen.getByText('国家级非遗名录：唐山皮影戏（河北唐山）')).toBeInTheDocument()
     expect(screen.getByText('剧团演示资料（幕后操演与关节联动）')).toBeInTheDocument()

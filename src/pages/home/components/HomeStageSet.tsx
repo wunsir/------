@@ -33,7 +33,7 @@ export function HomeStageSet({ scenePhase }: HomeStageSetProps) {
           transform: handoffVisible ? 'translateY(0)' : 'translateY(12px)',
         }}
       >
-        幕已开，影将入场。
+        幕已拉开，影人要上场了。
       </div>
     </div>
   )

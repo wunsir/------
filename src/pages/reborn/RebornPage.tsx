@@ -19,7 +19,7 @@ function RebornArchiveHero() {
   return (
     <aside className="reborn-archive-hero">
       <div className="reborn-archive-hero-topline">
-        <span>转译档案</span>
+        <span>设计档案</span>
         <span>outline / motif / media</span>
       </div>
       <div className="reborn-archive-board" aria-hidden="true">
@@ -34,12 +34,12 @@ function RebornArchiveHero() {
       </div>
       <dl className="reborn-archive-notes">
         <div>
-          <dt>视觉再设计</dt>
-          <dd>先保留剪影和行当识别，再压缩纹样。</dd>
+          <dt>形象整理</dt>
+          <dd>先保留剪影和行当特征，再减少纹样。</dd>
         </div>
         <div>
-          <dt>辅助更新</dt>
-          <dd>展陈、传播和表演只作为进入路径。</dd>
+          <dt>更多去处</dt>
+          <dd>展陈、课程和舞台，都是今天看见皮影的地方。</dd>
         </div>
       </dl>
     </aside>
@@ -51,10 +51,10 @@ function RebornSourceAnchors() {
     <aside aria-labelledby="reborn-source-anchor-title" className="source-anchor-strip reborn-source-strip">
       <div className="source-anchor-copy">
         <p id="reborn-source-anchor-title" className="source-anchor-eyebrow">
-          来源线索
+          资料来源
         </p>
         <p>
-          页面只保留与视觉更新直接相关的公开线索，传播和表演资料作为辅助依据呈现。
+          这里列出几条公开资料，说明展陈、课程和文创应用这些内容从哪里来。
         </p>
       </div>
       <div className="source-anchor-list">
@@ -85,9 +85,9 @@ export function RebornPage() {
       />
 
       <SectionBlock
-        description="当代新生页先看视觉怎样被重新整理：轮廓、纹样、比例和媒介入口改变，但剪影识别仍要成立。"
-        eyebrow="视觉链路"
-        title="旧影进入今天，先从视觉句法开始"
+        description="先看轮廓、纹样和比例怎样被整理，剪影识别仍然要保留下来。"
+        eyebrow="形象整理"
+        title="先把影人的样子整理清楚"
       >
         <div className="grid gap-4 lg:grid-cols-2">
           {rebornTimeline.map((item, index) => (
@@ -112,9 +112,9 @@ export function RebornPage() {
       </SectionBlock>
 
       <SectionBlock
-        description="角色卡模块把当代改写落在具体人物上：哪一部分被删减，哪一部分被放大，为什么仍然像皮影。"
-        eyebrow="视觉档案"
-        title="先改轮廓、纹样和媒介语法"
+        description="这些卡片看的是具体人物：哪些细节可以减掉，哪些轮廓必须留下。"
+        eyebrow="角色样式"
+        title="保留一眼能认出的部分"
       >
         <div className="grid gap-4 lg:grid-cols-3">
           {rebornCharacters.map((card) => (
@@ -134,7 +134,7 @@ export function RebornPage() {
               <dl className="space-y-3 text-sm text-[var(--stage-ink-soft)]">
                 <div>
                   <dt className="text-xs uppercase tracking-[0.3em] text-[var(--stage-muted)]">
-                    当代气质
+                    设计特点
                   </dt>
                   <dd>{card.temperament}</dd>
                 </div>
@@ -146,7 +146,7 @@ export function RebornPage() {
                 </div>
                 <div>
                   <dt className="text-xs uppercase tracking-[0.3em] text-[var(--stage-muted)]">
-                    转译方式
+                    整理方式
                   </dt>
                   <dd>{card.originStyle}</dd>
                 </div>
@@ -168,9 +168,9 @@ export function RebornPage() {
       </SectionBlock>
 
       <SectionBlock
-        description="展演与案例模块只做辅助线：让用户看到皮影如何离开传统戏台，同时不让技术效果盖过视觉识别。"
-        eyebrow="传播与表演"
-        title="传播和表演，服务于视觉更新的入口"
+        description="这里看皮影怎样走进展馆、课程和新的舞台，同时不让展陈方式或技术效果盖过皮影本身。"
+        eyebrow="展陈与舞台"
+        title="也在展馆和舞台里出现"
       >
         <div className="grid gap-4 lg:grid-cols-2">
           {rebornPlays.map((play) => (
@@ -214,16 +214,16 @@ export function RebornPage() {
       </SectionBlock>
 
       <SectionBlock
-        description="这里不把更新写成趋势口号，而是把三条真正的变化轨道拆开：入口变了、表演关系变了、视觉句法也变了。"
-        eyebrow="更新轨道"
-        title="更新不是换皮，而是换入口、换表演、换视觉句法"
+        description="最后把三件事放在一起看：形象怎么整理，人们在哪里看见它，它又怎样进入新的舞台。"
+        eyebrow="今天在哪儿看见"
+        title="今天的皮影，不只在老戏台上"
       >
         <div className="grid gap-4 lg:grid-cols-3">
           {rebornTracks.map((track) => (
             <article key={track.id} className="stage-card reborn-dossier-card space-y-5">
               <div className="space-y-3">
                 <p className="text-xs uppercase tracking-[0.32em] text-[var(--stage-muted)]">
-                  更新脉络
+                  方向
                 </p>
                 <h3 className="font-display text-3xl text-[var(--stage-paper)]">
                   {track.title}
@@ -235,13 +235,13 @@ export function RebornPage() {
               <dl className="space-y-3 text-sm text-[var(--stage-ink-soft)]">
                 <div>
                   <dt className="text-xs uppercase tracking-[0.3em] text-[var(--stage-muted)]">
-                    今天如何发生
+                    现在怎样做
                   </dt>
                   <dd>{track.presentTense}</dd>
                 </div>
                 <div>
                   <dt className="text-xs uppercase tracking-[0.3em] text-[var(--stage-muted)]">
-                    仍被保留的核心
+                    保留下来的部分
                   </dt>
                   <dd>{track.retainedCore}</dd>
                 </div>

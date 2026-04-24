@@ -57,22 +57,22 @@ describe('HomePage opening scene', () => {
 
     expect(scene).toHaveAttribute('data-opening-mode', 'full')
     expect(scene).toHaveAttribute('data-scene-phase', 'closed')
-    expect(screen.queryByRole('navigation', { name: '首页主导航' })).not.toBeInTheDocument()
-    expect(screen.queryByRole('link', { name: '进入光影美学' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('navigation', { name: '主导航' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: '查看灯与影' })).not.toBeInTheDocument()
 
     advanceScene(4190)
 
     expect(scene).toHaveAttribute('data-scene-phase', 'puppet')
-    expect(screen.queryByRole('navigation', { name: '首页主导航' })).not.toBeInTheDocument()
-    expect(screen.queryByRole('link', { name: '进入制作工艺' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('navigation', { name: '主导航' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: '查看制作工艺' })).not.toBeInTheDocument()
 
     advanceScene(1200)
 
     expect(scene).toHaveAttribute('data-scene-phase', 'ready')
     expect(scene).toHaveAttribute('data-nav-visible', 'true')
     expect(scene).toHaveAttribute('data-guide-visible', 'true')
-    expect(screen.getByRole('navigation', { name: '首页主导航' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: '进入光影美学' })).toHaveAttribute(
+    expect(screen.getByRole('navigation', { name: '主导航' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: '查看灯与影' })).toHaveAttribute(
       'href',
       '/light-shadow',
     )
@@ -100,7 +100,7 @@ describe('HomePage opening scene', () => {
 
     advanceScene(5600)
 
-    const guideLinks = screen.getAllByRole('link', { name: /^进入/ })
+    const guideLinks = screen.getAllByRole('link', { name: /^查看/ })
 
     expect(guideLinks.map((link) => link.getAttribute('href'))).toEqual([
       '/light-shadow',
@@ -114,15 +114,15 @@ describe('HomePage opening scene', () => {
 
     advanceScene(5600)
 
-    const menuButton = screen.getByRole('button', { name: '打开首页章节菜单' })
+    const menuButton = screen.getByRole('button', { name: '打开章节菜单' })
 
     expect(menuButton).toHaveAttribute('aria-expanded', 'false')
-    expect(screen.queryByRole('navigation', { name: '首页移动章节菜单' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('navigation', { name: '章节菜单' })).not.toBeInTheDocument()
 
     fireEvent.click(menuButton)
 
     expect(menuButton).toHaveAttribute('aria-expanded', 'true')
-    expect(screen.getByRole('navigation', { name: '首页移动章节菜单' })).toBeInTheDocument()
+    expect(screen.getByRole('navigation', { name: '章节菜单' })).toBeInTheDocument()
   })
 
   it('does not expose navigation or guide links before the opening handoff', () => {
@@ -133,8 +133,8 @@ describe('HomePage opening scene', () => {
     const scene = screen.getByTestId('home-opening-scene')
 
     expect(scene).toHaveAttribute('data-scene-phase', 'light')
-    expect(screen.queryByRole('navigation', { name: '首页主导航' })).not.toBeInTheDocument()
-    expect(screen.queryByRole('link', { name: '进入光影美学' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('navigation', { name: '主导航' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: '查看灯与影' })).not.toBeInTheDocument()
     expect(screen.queryByText('今夜上演三折')).not.toBeInTheDocument()
   })
 
@@ -147,8 +147,8 @@ describe('HomePage opening scene', () => {
 
     expect(scene).toHaveAttribute('data-opening-mode', 'static')
     expect(scene).toHaveAttribute('data-scene-phase', 'ready')
-    expect(screen.getByRole('navigation', { name: '首页主导航' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: '进入当代新生' })).toHaveAttribute(
+    expect(screen.getByRole('navigation', { name: '主导航' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: '查看今天的皮影' })).toHaveAttribute(
       'href',
       '/reborn',
     )

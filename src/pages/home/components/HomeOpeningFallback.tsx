@@ -13,7 +13,7 @@ export function HomeOpeningFallback({
 
   return (
     <div className="home-fallback-badge" aria-live="polite">
-      {openingMode === 'static' ? '静态入场' : '轻量入场'}
+      {openingMode === 'static' ? '静态模式' : '轻量模式'}
     </div>
   )
 }
