@@ -1,5 +1,6 @@
 import type {
   CharacterCard,
+  LightPosition,
   CharacterRoleFilter,
   PlayCard,
   TimelineStep,
@@ -138,4 +139,29 @@ export const performanceTimeline: TimelineStep[] = [
     description: '光先收，影后退，一场戏的余韵其实靠最后几秒的暗下去完成。',
     kind: 'performance',
   },
+]
+
+export const backstageMechanics = [
+  {
+    id: 'rod-tension',
+    title: '提杆发力',
+    description: '主杆力度决定动作起势，灯位偏移时，提杆节奏要跟着改，影才不会飘。',
+  },
+  {
+    id: 'wrist-pause',
+    title: '翻腕停顿',
+    description: '一场戏最有重量的是停顿，灯在中位时停，人物会更像“立住”，而不是“掠过”。',
+  },
+  {
+    id: 'back-light-sync',
+    title: '背后协同',
+    description: '幕后并非单人动作，操杆与灯光要同拍推进，观众看到的前后关系才会成立。',
+  },
+] as const
+
+export const fallbackLampPath: LightPosition[] = [
+  { u: 0.22, v: 0.44 },
+  { u: 0.5, v: 0.34 },
+  { u: 0.78, v: 0.44 },
+  { u: 0.5, v: 0.36 },
 ]

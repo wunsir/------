@@ -53,3 +53,17 @@ export type TimelineStep = {
 }
 
 export type CharacterRoleFilter = 'all' | '武生' | '旦角' | '净角' | '丑角'
+
+export type LightShadowInputMode = 'mouse' | 'touch' | 'none'
+
+export type LightShadowScenePhase =
+  | 'opening'
+  | 'interactive'
+  | 'switching'
+  | 'settle'
+  | 'auto-demo'
+
+export type LightPosition = {
+  u: number
+  v: number
+}

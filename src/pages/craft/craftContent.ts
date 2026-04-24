@@ -11,45 +11,51 @@ export type CraftLayer = {
 
 export const craftTimeline: TimelineStep[] = [
   {
-    id: 'select-skin',
-    title: '制皮：透光的底骨',
+    id: 'hide-softening',
+    title: '制皮起底：回软与刮薄',
     phase: '材料',
-    description: '挑选最强韧的牛皮，刮薄、碾平，只留一线光能生动穿透的醇净。这是后续所有刀口与生命的上限。',
+    description:
+      '选用牛皮后先浸泡回软，再反复刮薄与晾平。厚薄差控制在同一张皮内，是后续透光均匀的前提。',
     kind: 'process',
   },
   {
-    id: 'carving',
-    title: '镂刻：刀向寻光',
+    id: 'pattern-carving',
+    title: '雕刻起纹：推刀与扎孔',
     phase: '雕刻',
-    description: '以刀代笔，刻下细密的雪花纹与水路。刀口既形成视觉图案，更为光束穿越幕前留出呼吸的节奏。',
+    description:
+      '用平刀、斜刀与月牙刀完成边线和纹孔。纹孔密度不仅决定图案精细度，也决定幕前亮部层次。',
     kind: 'process',
   },
   {
-    id: 'coloring',
-    title: '敷彩：染就戏梦',
+    id: 'color-binding',
+    title: '敷彩定色：矿物彩与鱼鳔胶',
     phase: '上色',
-    description: '用自调的矿物重彩走线，红绿撞色。当强光穿透这层薄色，影人便在黑暗的幕布上爆发出浓烈的张力。',
+    description:
+      '矿物颜料以鱼鳔胶调和后薄敷，多次罩染而不一次压厚，保证色相饱和同时保留透光。',
     kind: 'process',
   },
   {
-    id: 'assembly',
-    title: '缀结：骨骼赋形',
+    id: 'joint-rigging',
+    title: '组装成身：活扣关节与操纵杆',
     phase: '组装',
-    description: '以线穿锁，点定四肢关节。这不只连接结构，更是为了表演空间的延展，安上操纵杆的那一刻，便有了魂。',
+    description:
+      '以线扣连接头、肩、肘、腕等关节，再安装头杆与手杆。关节松紧和杆位角度直接决定动作可控范围。',
     kind: 'process',
   },
   {
-    id: 'performance',
-    title: '登场：光下重生',
-    phase: '表演',
-    description: '随着急促的鼓板响起，木杆被猛然推至纸幕贴合。一束暖光打下，原本静默的皮料瞬间成了活生生的将领。',
-    kind: 'performance',
+    id: 'light-check',
+    title: '试灯校影：边缘与亮度分区',
+    phase: '校影',
+    description:
+      '上幕前以暖灯试照，检查影缘是否发糊、纹孔是否堵光，并按部位微调厚薄与关节阻尼。',
+    kind: 'process',
   },
   {
-    id: 'curtain-fall',
-    title: '退场：影逝于暗',
-    phase: '落幕',
-    description: '灯源移开，光影瞬间散去。戏落幕时，喧嚣归零，它们再次隐入黑暗，变回皮箱里沉睡的剪影。',
+    id: 'stage-run',
+    title: '幕前走身：起手、回身、亮相',
+    phase: '表演',
+    description:
+      '进入演出后，操杆先做起手再转身，利用关节传动把人物节奏传到幕前，形成可读的身段。',
     kind: 'performance',
   },
 ]
@@ -57,88 +63,97 @@ export const craftTimeline: TimelineStep[] = [
 export const craftCharacters: CharacterCard[] = [
   {
     id: 'craft-dan',
-    name: '精雕青衣',
+    name: '华县旦角纹样样本',
     roleType: '旦角',
-    temperament: '工巧、繁密、极致透光',
+    temperament: '细纹密、色层薄、透光层次清楚',
     featuredIn: ['打金枝', '白蛇传'],
-    originStyle: '陕西东路皮影',
-    description: '头面与裙摆上的镂空是雕刻极限的展示，只有足够细致的刀工，才能让其在光下显出层层涟漪。',
-    tags: ['雪花镂', '水路', '精工'],
+    originStyle: '陕西华县皮影工艺样本',
+    description:
+      '头饰与袖边以密纹刀路和小孔透光见长，重点不在夸张造型，而在幕前光下还能保持层次与边缘清晰。',
+    tags: ['雪花纹', '月牙刀', '薄敷重彩'],
   },
   {
     id: 'craft-jing',
-    name: '重彩黑脸',
+    name: '唐山净角重彩样本',
     roleType: '净角',
-    temperament: '粗犷、厚重、色彩浓烈',
+    temperament: '线条厚实、色块明确、轮廓压场',
     featuredIn: ['钟馗嫁妹', '铡美案'],
-    originStyle: '华县皮影',
-    description: '刻痕大刀阔斧，留白面积大以承载高饱和的红绿矿物颜料。光束穿过时，视觉压迫感极强。',
-    tags: ['大凿', '重彩', '高饱和'],
+    originStyle: '河北唐山皮影工艺样本',
+    description:
+      '净角面部用更稳的主线和更明确的色块分区处理，既保留戏曲角色识别，也避免透光后出现脏色混叠。',
+    tags: ['平刀起线', '矿物彩', '边缘清晰'],
   },
   {
     id: 'craft-sheng',
-    name: '提线武将',
+    name: '冀东武生关节样本',
     roleType: '武生',
-    temperament: '多轴、灵活、关节精密',
+    temperament: '杆路明确、关节灵活、动作干净',
     featuredIn: ['长坂坡', '挑滑车'],
-    originStyle: '冀东皮影',
-    description: '除了常规关窍，武将往往有额外的手腕与兵器控制点。关节的组装逻辑直接决定了其在幕前的打斗流畅度。',
-    tags: ['多关节', '暗线', '动态张力'],
+    originStyle: '冀东皮影操演样本',
+    description:
+      '武生常在肩、肘、腕之外增加兵器挂点，配合双杆控制，确保幕前快节奏动作仍能保持方向与节奏清楚。',
+    tags: ['活扣结构', '双杆控制', '武戏身段'],
   },
 ]
 
 export const craftPlays: PlayCard[] = [
   {
     id: 'craft-play-1',
-    title: '匠作录：刀与光的契约',
-    sceneHook: '刻刀没入牛皮，刻出的是人物，透出的是生机。',
-    summary: '这并非舞台上的一出戏，而是每一个影人走向光明前必须经历的暗中雕琢与技艺传承。',
-    relatedCharacters: ['精雕青衣'],
-    stageMood: '沉静、微光、厚重',
-    tags: ['幕后', '手作', '刀工'],
+    title: '工坊实录：牛皮刮制与晾皮',
+    sceneHook: '同一张皮要先回软再刮薄，才经得住后续刀路与上灯。',
+    summary:
+      '记录材料段最关键的两步：厚薄分区与透光测试。不是为“做旧”，而是为幕前影缘清晰度打底。',
+    relatedCharacters: ['华县旦角纹样样本'],
+    stageMood: '克制、安静、手作',
+    tags: ['材料', '刮薄', '透光校验'],
   },
   {
     id: 'craft-play-2',
-    title: '结骨录：牵丝引线',
-    sceneHook: '十指翻飞间，死皮化作活骨。',
-    summary: '拆解皮影最隐秘的连结工艺。一根老线，几个活扣，完成了从静物到演员的终极跃升。',
-    relatedCharacters: ['提线武将'],
-    stageMood: '紧凑、机巧、精密',
-    tags: ['关窍', '组装', '牵杆'],
+    title: '幕后实录：关节定位与试灯',
+    sceneHook: '先定活扣，再上杆，最后试灯，动作和光感才会一起成立。',
+    summary:
+      '把关节松紧、杆位角度与试灯校影放在同一流程处理，确保抬手、回身、亮相不会散架。',
+    relatedCharacters: ['冀东武生关节样本'],
+    stageMood: '紧凑、稳定、可控',
+    tags: ['关节', '操纵杆', '试灯'],
   },
 ]
 
 export const craftLayers: CraftLayer[] = [
   {
     id: 'material-layer',
-    title: '选皮取透',
+    title: '牛皮回软与刮薄',
     phase: '材料',
-    detail: '工艺起点不是图案，而是先决定牛皮的韧性、薄度与透光均匀度。底材不稳，后面的精工都会失真。',
-    craftFocus: '把皮料修到既能吃刀，又能让暖光穿过时不发浊。',
-    stageEffect: '人物登场时，轮廓会先透得干净，边缘不糊。',
+    detail:
+      '材料段先做回软、去脂与刮薄，按头面、躯干、衣摆分区控制厚薄，避免一体化处理导致透光失衡。',
+    craftFocus: '把皮料调整到既能稳定吃刀，也能在暖灯下保持明暗分区。',
+    stageEffect: '幕前影缘更干净，人物轮廓不会因局部过厚而发闷。',
   },
   {
     id: 'carving-layer',
-    title: '刀路起纹',
+    title: '刀路与纹孔分区',
     phase: '雕刻',
-    detail: '雕刻不是单纯做花纹，而是在厚薄之间控制呼吸。线有多细、孔有多密，决定了幕前能看到多少层次。',
-    craftFocus: '让雪花纹、水路纹和衣褶纹在近看与透光时都成立。',
-    stageEffect: '角色转身时，影纹会比平面图案更有流动感。',
+    detail:
+      '边线、衣褶、纹孔使用不同刀路。纹孔不只承担装饰，还承担光通道作用，直接影响幕前亮部细节。',
+    craftFocus: '让纹样在近看可辨，在透光时仍能保留层次，而不是只剩一片亮斑。',
+    stageEffect: '角色转身时，衣纹和袖口层级可读，不会塌成平面黑影。',
   },
   {
     id: 'color-layer',
-    title: '重彩入幕',
+    title: '鱼鳔胶与矿物彩',
     phase: '上色',
-    detail: '上色要和透光性一起考虑。矿物重彩压得太厚会闷，压得太轻又失去戏曲的浓度，关键在层层薄敷。',
-    craftFocus: '保住红、绿、赭等高对比色，同时不堵住光线。',
-    stageEffect: '灯一打下，人物先不是黑影，而是带着温度与戏味的彩影。',
+    detail:
+      '矿物颜料以鱼鳔胶调和，采用多层薄敷而非一次厚涂。色层先求稳定附着，再求透光后的色相完整。',
+    craftFocus: '兼顾红、绿、赭等戏曲色的饱和度与透光度，避免色层堵光。',
+    stageEffect: '灯下能看到彩影层次，而不是只有单色暗块。',
   },
   {
     id: 'assembly-layer',
-    title: '关节起势',
+    title: '活扣关节与操纵杆',
     phase: '组装',
-    detail: '组装决定动作是否利落。活扣的位置、松紧与操纵杆角度，都在替角色预设“能如何动”。',
-    craftFocus: '让头、臂、腰、兵器之间形成稳定又灵活的传动关系。',
-    stageEffect: '一旦上台，角色抬手、回身、亮相时会带出真正的起承转合。',
+    detail:
+      '组装阶段先确定活扣位置，再校正头杆与手杆角度。关节阻尼和杆路配合决定角色动作是否连贯。',
+    craftFocus: '让头、臂、腰与兵器连接点形成稳定传动，保证快慢动作都可控。',
+    stageEffect: '幕前抬手、回身、亮相更干净，动作不会拖泥带水。',
   },
 ]

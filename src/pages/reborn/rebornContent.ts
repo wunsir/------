@@ -11,108 +11,120 @@ export type RebornTrack = {
 export const rebornTimeline: TimelineStep[] = [
   {
     id: 'visual-redesign',
-    title: '视觉解构：提纯基因',
+    title: '视觉再设计：轮廓提纯与纹样简化',
     phase: '视觉更新',
-    description: '剥离冗余的古典装饰，提纯皮影最核心的剪影边缘与镂空基因。将其转译为一套更冷静、更适应当代的视觉设计语言。',
+    description:
+      '把传统影人轮廓拆成可复用的线面关系，保留头饰、袖口、兵器等识别点，再做纹样简化与比例重排。',
     kind: 'process',
   },
   {
-    id: 'spatial-exhibition',
-    title: '展陈重塑：走入幕布',
-    phase: '媒介更新',
-    description: '打破“人在台下看”的单一视角，借助错层白纱、光影矩阵与悬挂装置，让观众直接走进放大的皮影内部。',
+    id: 'museum-display',
+    title: '展陈更新：博物馆导览与教育工作坊',
+    phase: '传播更新',
+    description:
+      '在博物馆与非遗馆中，通过导览图、互动投影和工作坊，让观众先看懂轮廓与透光逻辑，再进入故事。',
     kind: 'performance',
   },
   {
-    id: 'interactive-media',
-    title: '交互演变：触印光影',
-    phase: '媒介更新',
-    description: '采用多通道投影与捕捉技术，用手势控制数字影人。屏幕成为新幕布，传统操纵杆化身为交互算法。',
+    id: 'media-distribution',
+    title: '传播更新：短视频与文创视觉',
+    phase: '传播更新',
+    description:
+      '以短视频分镜、海报和包装延展传播皮影元素，强调一眼可识别的剪影与纹样，不依赖虚构世界观。',
     kind: 'history',
   },
   {
-    id: 'contemporary-script',
-    title: '文本对话：当代语境',
+    id: 'stage-collab',
+    title: '表演更新：多媒体舞台协同',
     phase: '表演更新',
-    description: '不再局限于帝王将相、才子佳人。用古老的光影载体探讨现代人的城市聚散与身份认同，让老手艺发新声。',
+    description:
+      '在现代剧场里把皮影与真人、投影和灯光并置，保留操演节奏，让传统动作在新舞台语法中可读。',
     kind: 'performance',
   },
 ]
 
 export const rebornCharacters: CharacterCard[] = [
   {
-    id: 'modern-minimal-sheng',
-    name: '无相武将',
+    id: 'visual-sheng',
+    name: '剪影提纯武生样本',
     roleType: '武生',
-    temperament: '极简、线条感、褪去重彩',
-    featuredIn: ['《影·无界》数字展'],
-    originStyle: '参数化生成',
-    description: '保留武将最核心的动势轮廓线，去掉面部特征与衣着色彩，在纯白背景下呈现极致纯粹的几何张力。',
-    tags: ['视觉提纯', '白描', '当代艺术'],
+    temperament: '轮廓简明、动作线突出、识别快',
+    featuredIn: ['高校视觉传达课程公开作业', '博物馆教育工作坊'],
+    originStyle: '轮廓提纯与比例重排',
+    description:
+      '保留武生抬臂、亮兵器等关键姿态，把复杂装饰减到最小，优先保证一眼识别与后续媒介适配。',
+    tags: ['轮廓提纯', '纹样减法', '角色识别'],
   },
   {
-    id: 'acrylic-dan',
-    name: '流光青衣',
+    id: 'motif-dan',
+    name: '纹样简化旦角样本',
     roleType: '旦角',
-    temperament: '通透、折射、介质实验',
-    featuredIn: ['《镜花水月》实验剧'],
-    originStyle: '新材料工艺',
-    description: '放弃传统牛皮，采用彩色透光新材料切割。光束穿透时不仅产生影，更带来水波般的色彩折射与光晕。',
-    tags: ['材料替换', '光学折射', '波光感'],
+    temperament: '装饰减法、色层克制、线面平衡',
+    featuredIn: ['文创海报与包装公开案例', '非遗主题视觉展板'],
+    originStyle: '纹样重组与色层压缩',
+    description:
+      '旦角服饰纹样转为更清晰的线面模块，减少堆叠细节，保留发饰与袖口识别点，便于跨媒介统一。',
+    tags: ['纹样简化', '色层压缩', '平面转译'],
   },
   {
-    id: 'kinetic-jing',
-    name: '矩阵巨灵',
+    id: 'exhibition-jing',
+    name: '展陈放大净角样本',
     roleType: '净角',
-    temperament: '压迫、机械感、巨物',
-    featuredIn: ['公共空间展陈'],
-    originStyle: '结构解构',
-    description: '将其原本厚重的面部放大至三米，由多层透光板解构重组，重新展现非遗元素的“压场”重量感。',
-    tags: ['空间雕塑', '巨物感', '建筑感'],
+    temperament: '结构放大、信息清晰、现场导览友好',
+    featuredIn: ['博物馆展陈导览', '公共文化空间装置'],
+    originStyle: '展陈尺度重构',
+    description:
+      '净角脸谱保留主线和色块关系，在展陈中放大后仍可读，让观众先理解结构，再进入戏曲语境。',
+    tags: ['博物馆展陈', '尺度重构', '现场阅读'],
   },
 ]
 
 export const rebornPlays: PlayCard[] = [
   {
     id: 'reborn-play-1',
-    title: '《皮影·无界》空间大展',
-    sceneHook: '不再是一块小小的窗，而是包围你的整片流光森林。',
-    summary: '一场将皮影元素彻底解构的沉浸式展览。光斑、镂空影纹与环境布景交织，以当代策展语言重新释放传统生命力。',
-    relatedCharacters: ['无相武将', '矩阵巨灵'],
-    stageMood: '沉浸、前卫、空间感',
-    tags: ['空间展陈', '数字视觉'],
+    title: '博物馆展陈：皮影轮廓导览样本',
+    sceneHook: '先让观众看清轮廓和透光，再讲角色和剧情。',
+    summary:
+      '通过展签、分层图与近距离灯照演示，把“为什么像皮影”解释清楚，视觉再设计不脱离工艺来源。',
+    relatedCharacters: ['剪影提纯武生样本', '展陈放大净角样本'],
+    stageMood: '清晰、克制、可读',
+    tags: ['博物馆展陈', '导览图', '视觉再设计'],
   },
   {
     id: 'reborn-play-2',
-    title: '实验剧《镜花水月》',
-    sceneHook: '水中的倒影与幕布上的留白，谁比谁更真实？',
-    summary: '结合新媒材影偶与现代舞者的交互实验场。讲述东方语境下的缥缈旧梦，将非遗技法融入当代剧场审美的尝试。',
-    relatedCharacters: ['流光青衣'],
-    stageMood: '诗意、空灵、流动',
-    tags: ['新材料', '现代舞台', '跨界融合'],
+    title: '多媒体舞台：影偶与真人同台样本',
+    sceneHook: '灯光切换时，影偶动作与真人走位同步，观众能同时读到传统与当代。',
+    summary:
+      '以多媒体舞台作为表演更新辅助线，核心仍是影偶节奏与轮廓识别，避免把技术效果当成主角。',
+    relatedCharacters: ['纹样简化旦角样本'],
+    stageMood: '协调、现场感、节奏明确',
+    tags: ['多媒体舞台', '表演更新', '协同演出'],
   },
 ]
 
 export const rebornTracks: RebornTrack[] = [
   {
+    id: 'reborn-visual',
+    title: '视觉再设计更新',
+    summary:
+      '先做轮廓提纯与纹样简化，再做比例重排与媒介适配。视觉更新不是加特效，而是先保住识别核心。',
+    presentTense:
+      '当前最有效的转译方式，是把角色识别点和纹样逻辑变成跨海报、导览、短视频都能复用的视觉语法。',
+    retainedCore: '无论载体如何变化，剪影轮廓、透光关系与行当辨识都必须一眼成立。',
+  },
+  {
     id: 'reborn-distribution',
     title: '传播方式更新',
-    summary: '从乡间戏台到展馆、短片、品牌视觉与公共空间，皮影不再只靠一场完整演出来被看见。',
-    presentTense: '今天的入口更碎片，也更容易先以一个画面、一个装置、一次展陈被记住。',
+    summary: '传播入口从单一戏台转到博物馆展陈、短视频与文创视觉，让更多人先从画面识别皮影。',
+    presentTense:
+      '今天的传播以小而准的入口为主：一条短视频片段、一张导览图、一套视觉物料都能成为初次接触点。',
     retainedCore: '真正被保留下来的，仍是剪影、透光与人物轮廓的辨识度。',
   },
   {
     id: 'reborn-performance',
     title: '表演更新',
-    summary: '操演逻辑开始和现代剧场、舞蹈、多媒体装置并置，演出不再只有“幕后操杆”的单一关系。',
-    presentTense: '新作品更强调观众参与、空间关系与现场氛围，而不只复刻传统程式。',
+    summary: '表演更新更多发生在多媒体舞台协同，但它仍是辅助线，目标是让传统操演节奏在新空间里被读懂。',
+    presentTense: '当前更常见的是影偶、真人、投影并置，让观众在同一场景中同时读取动作与光影关系。',
     retainedCore: '影偶一旦遇光而动，人物由节奏被读出来的核心机制并没有改变。',
-  },
-  {
-    id: 'reborn-visual',
-    title: '视觉再设计更新',
-    summary: '设计师会把皮影的边缘、镂空、关节与装饰纹样抽离出来，转成更克制、更适合当代媒介的视觉语言。',
-    presentTense: '更新重点不是加更多元素，而是提纯视觉基因，让传统形态在新介质里继续成立。',
-    retainedCore: '观众依旧能一眼认出那是皮影，而不是被彻底替换掉的陌生图形。',
   },
 ]

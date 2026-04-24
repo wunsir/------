@@ -1,51 +1,140 @@
-import { render, screen } from '@testing-library/react'
+import { act, render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 
 import { HomePage } from './HomePage'
 
-describe('HomePage', () => {
-  it('renders the director-style guide with three curated entry cards', () => {
-    render(
-      <MemoryRouter>
-        <HomePage />
-      </MemoryRouter>,
-    )
+function mockMatchMedia(reducedMotion: boolean) {
+  Object.defineProperty(window, 'matchMedia', {
+    configurable: true,
+    writable: true,
+    value: vi.fn().mockImplementation((query: string) => ({
+      matches: query === '(prefers-reduced-motion: reduce)' ? reducedMotion : false,
+      media: query,
+      onchange: null,
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+      addListener: vi.fn(),
+      removeListener: vi.fn(),
+      dispatchEvent: vi.fn(),
+    })),
+  })
+}
 
-    expect(
-      screen.getByRole('heading', { level: 1, name: '一戏入影' }),
-    ).toBeInTheDocument()
-    expect(
-      screen.getByRole('heading', { level: 2, name: '今夜上演三折' }),
-    ).toBeInTheDocument()
-    expect(screen.getByText('章节导览')).toBeInTheDocument()
-    expect(screen.getByText('导演提示')).toBeInTheDocument()
+function renderHomePage() {
+  return render(
+    <MemoryRouter>
+      <HomePage />
+    </MemoryRouter>,
+  )
+}
 
-    expect(screen.getByRole('link', { name: '进入制作工艺' })).toHaveAttribute(
-      'href',
-      '/craft',
-    )
+function advanceScene(ms: number) {
+  act(() => {
+    vi.advanceTimersByTime(ms)
+  })
+}
+
+describe('HomePage opening scene', () => {
+  beforeEach(() => {
+    vi.useFakeTimers()
+    vi.setSystemTime(new Date('2026-04-24T12:00:00.000Z'))
+    sessionStorage.clear()
+    mockMatchMedia(false)
+  })
+
+  afterEach(() => {
+    act(() => {
+      vi.runOnlyPendingTimers()
+    })
+    vi.useRealTimers()
+    vi.unstubAllGlobals()
+  })
+
+  it('plays the full opening on first visit and eventually enters ready', () => {
+    renderHomePage()
+
+    const scene = screen.getByTestId('home-opening-scene')
+
+    expect(scene).toHaveAttribute('data-opening-mode', 'full')
+    expect(scene).toHaveAttribute('data-scene-phase', 'closed')
+    expect(screen.queryByRole('navigation', { name: '首页主导航' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: '进入光影美学' })).not.toBeInTheDocument()
+
+    advanceScene(4190)
+
+    expect(scene).toHaveAttribute('data-scene-phase', 'puppet')
+    expect(screen.queryByRole('navigation', { name: '首页主导航' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: '进入制作工艺' })).not.toBeInTheDocument()
+
+    advanceScene(1200)
+
+    expect(scene).toHaveAttribute('data-scene-phase', 'ready')
+    expect(scene).toHaveAttribute('data-nav-visible', 'true')
+    expect(scene).toHaveAttribute('data-guide-visible', 'true')
+    expect(screen.getByRole('navigation', { name: '首页主导航' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: '进入光影美学' })).toHaveAttribute(
       'href',
       '/light-shadow',
     )
+  })
+
+  it('uses the shortened revisit opening after the session has already seen the full opening', () => {
+    sessionStorage.setItem('hasSeenHomeOpening', 'true')
+    sessionStorage.setItem('lastHomeReadyAt', String(Date.now() - 45_000))
+    sessionStorage.setItem('lastHomeExitAt', String(Date.now() - 30_000))
+
+    renderHomePage()
+
+    const scene = screen.getByTestId('home-opening-scene')
+
+    expect(scene).toHaveAttribute('data-opening-mode', 'short')
+    expect(scene).toHaveAttribute('data-scene-phase', 'curtain')
+
+    advanceScene(1800)
+
+    expect(scene).toHaveAttribute('data-scene-phase', 'ready')
+  })
+
+  it('keeps the guide order fixed as light-shadow, craft, then reborn', () => {
+    renderHomePage()
+
+    advanceScene(5600)
+
+    const guideLinks = screen.getAllByRole('link', { name: /^进入/ })
+
+    expect(guideLinks.map((link) => link.getAttribute('href'))).toEqual([
+      '/light-shadow',
+      '/craft',
+      '/reborn',
+    ])
+  })
+
+  it('does not expose navigation or guide links before the opening handoff', () => {
+    renderHomePage()
+
+    advanceScene(3190)
+
+    const scene = screen.getByTestId('home-opening-scene')
+
+    expect(scene).toHaveAttribute('data-scene-phase', 'light')
+    expect(screen.queryByRole('navigation', { name: '首页主导航' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: '进入光影美学' })).not.toBeInTheDocument()
+    expect(screen.queryByText('今夜上演三折')).not.toBeInTheDocument()
+  })
+
+  it('enters a static ready state immediately when reduced motion is enabled', () => {
+    mockMatchMedia(true)
+
+    renderHomePage()
+
+    const scene = screen.getByTestId('home-opening-scene')
+
+    expect(scene).toHaveAttribute('data-opening-mode', 'static')
+    expect(scene).toHaveAttribute('data-scene-phase', 'ready')
+    expect(screen.getByRole('navigation', { name: '首页主导航' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: '进入当代新生' })).toHaveAttribute(
       'href',
       '/reborn',
     )
-    expect(screen.getByText('推荐先看')).toBeInTheDocument()
-  })
-
-  it('puts the flagship light-shadow guide card first', () => {
-    render(
-      <MemoryRouter>
-        <HomePage />
-      </MemoryRouter>,
-    )
-
-    const guideLinks = screen.getAllByRole('link', { name: /^进入/ })
-
-    expect(guideLinks[0]).toHaveAttribute('href', '/light-shadow')
-    expect(guideLinks[1]).toHaveAttribute('href', '/craft')
-    expect(guideLinks[2]).toHaveAttribute('href', '/reborn')
   })
 })
