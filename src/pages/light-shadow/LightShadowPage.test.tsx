@@ -36,7 +36,15 @@ describe('LightShadowPage', () => {
     renderPage()
 
     expect(screen.getByTestId('scene-fallback-player')).toBeInTheDocument()
+    expect(screen.getByText('灯位一偏，影势随之改变')).toHaveClass('sm:hidden')
     expect(screen.getByTestId('l1-hero-stage')).toHaveAttribute('data-scene-phase', 'auto-demo')
+  })
+
+  it('keeps stage overlay labels off the mobile paper-screen area', () => {
+    renderPage()
+
+    expect(screen.getByTestId('stage-actor-name')).toHaveClass('hidden', 'sm:block')
+    expect(screen.getByText('自动演示')).toHaveClass('hidden', 'sm:block')
   })
 
   it('switches the on-stage actor when selecting another role', async () => {

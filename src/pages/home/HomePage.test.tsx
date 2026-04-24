@@ -1,4 +1,4 @@
-import { act, render, screen } from '@testing-library/react'
+import { act, fireEvent, render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 
 import { HomePage } from './HomePage'
@@ -107,6 +107,22 @@ describe('HomePage opening scene', () => {
       '/craft',
       '/reborn',
     ])
+  })
+
+  it('keeps the mobile route list behind the menu entry until the user opens it', () => {
+    renderHomePage()
+
+    advanceScene(5600)
+
+    const menuButton = screen.getByRole('button', { name: '打开首页章节菜单' })
+
+    expect(menuButton).toHaveAttribute('aria-expanded', 'false')
+    expect(screen.queryByRole('navigation', { name: '首页移动章节菜单' })).not.toBeInTheDocument()
+
+    fireEvent.click(menuButton)
+
+    expect(menuButton).toHaveAttribute('aria-expanded', 'true')
+    expect(screen.getByRole('navigation', { name: '首页移动章节菜单' })).toBeInTheDocument()
   })
 
   it('does not expose navigation or guide links before the opening handoff', () => {

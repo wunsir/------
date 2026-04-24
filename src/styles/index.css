@@ -68,6 +68,273 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.03);
   }
 
+  .craft-workbench-hero,
+  .reborn-archive-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.6rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 18%),
+      rgba(12, 9, 9, 0.72);
+    padding: 1.2rem;
+    box-shadow: var(--shadow-stage);
+  }
+
+  .craft-workbench-hero-topline,
+  .reborn-archive-hero-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--stage-muted);
+  }
+
+  .craft-workbench-hero-topline span:first-child,
+  .reborn-archive-hero-topline span:first-child {
+    color: var(--stage-paper);
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .craft-workbench-surface,
+  .reborn-archive-board {
+    position: relative;
+    min-height: 18rem;
+    margin-top: 1.1rem;
+    overflow: hidden;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+      rgba(8, 7, 7, 0.72);
+    background-size: 32px 32px;
+  }
+
+  .craft-workbench-surface {
+    background:
+      linear-gradient(90deg, rgba(240, 197, 112, 0.08) 1px, transparent 1px),
+      linear-gradient(180deg, rgba(240, 197, 112, 0.06) 1px, transparent 1px),
+      linear-gradient(180deg, rgba(63, 32, 22, 0.42), rgba(9, 7, 7, 0.78));
+    background-size: 34px 34px, 34px 34px, auto;
+  }
+
+  .craft-hide-sheet {
+    position: absolute;
+    inset: 18% 21% 16% 16%;
+    border-radius: 44% 36% 48% 32%;
+    border: 1px solid rgba(240, 197, 112, 0.26);
+    background:
+      radial-gradient(circle at 58% 36%, rgba(240, 197, 112, 0.24), transparent 18%),
+      linear-gradient(135deg, rgba(124, 63, 41, 0.68), rgba(54, 28, 22, 0.88));
+    box-shadow: inset 0 0 24px rgba(255, 231, 177, 0.06);
+  }
+
+  .craft-cutting-grid {
+    position: absolute;
+    inset: 26% 27% 24% 24%;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 48% 32% 42% 35%;
+  }
+
+  .craft-tool {
+    position: absolute;
+    transform-origin: center;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(245, 234, 208, 0.62), rgba(90, 62, 44, 0.74));
+  }
+
+  .craft-tool-knife {
+    right: 16%;
+    bottom: 17%;
+    height: 8.8rem;
+    width: 0.28rem;
+    transform: rotate(39deg);
+  }
+
+  .craft-tool-awl {
+    left: 18%;
+    bottom: 13%;
+    height: 7rem;
+    width: 0.22rem;
+    transform: rotate(-21deg);
+  }
+
+  .craft-joint-dot {
+    position: absolute;
+    height: 0.7rem;
+    width: 0.7rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 238, 194, 0.52);
+    background: rgba(240, 197, 112, 0.28);
+  }
+
+  .craft-joint-dot-one {
+    left: 42%;
+    top: 32%;
+  }
+
+  .craft-joint-dot-two {
+    left: 56%;
+    top: 48%;
+  }
+
+  .craft-joint-dot-three {
+    left: 45%;
+    bottom: 23%;
+  }
+
+  .craft-workbench-notes,
+  .reborn-archive-notes {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    color: var(--stage-ink-soft);
+    font-size: 0.84rem;
+    line-height: 1.7;
+  }
+
+  .craft-workbench-notes dt,
+  .reborn-archive-notes dt {
+    color: var(--stage-paper);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  .reborn-archive-board {
+    background:
+      linear-gradient(90deg, rgba(245, 234, 208, 0.055) 1px, transparent 1px),
+      linear-gradient(180deg, rgba(245, 234, 208, 0.04) 1px, transparent 1px),
+      linear-gradient(180deg, rgba(31, 29, 26, 0.78), rgba(8, 7, 7, 0.8));
+    background-size: 28px 28px, 28px 28px, auto;
+  }
+
+  .reborn-archive-sheet {
+    position: absolute;
+    border-radius: 0.85rem;
+    border: 1px solid rgba(245, 234, 208, 0.14);
+    background: rgba(245, 234, 208, 0.065);
+  }
+
+  .reborn-archive-sheet-one {
+    inset: 16% 34% 22% 12%;
+    transform: rotate(-4deg);
+  }
+
+  .reborn-archive-sheet-two {
+    inset: 22% 14% 15% 40%;
+    transform: rotate(5deg);
+  }
+
+  .reborn-motif-frame {
+    position: absolute;
+    inset: 28% 30% 28% 30%;
+    display: grid;
+    gap: 0.45rem;
+    transform: rotate(-2deg);
+  }
+
+  .reborn-motif-frame span {
+    border-radius: 999px;
+    border: 1px solid rgba(240, 197, 112, 0.2);
+    background: rgba(240, 197, 112, 0.08);
+  }
+
+  .reborn-archive-tag {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(245, 234, 208, 0.14);
+    padding: 0.45rem 0.65rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--stage-muted);
+  }
+
+  .craft-process-card {
+    border-left-color: rgba(240, 197, 112, 0.34);
+    background:
+      linear-gradient(90deg, rgba(240, 197, 112, 0.08), transparent 22%),
+      rgba(11, 8, 8, 0.68);
+  }
+
+  .craft-sample-card,
+  .craft-layer-card {
+    border-radius: 1.15rem;
+  }
+
+  .reborn-dossier-card {
+    border-radius: 0.9rem;
+    background:
+      linear-gradient(180deg, rgba(245, 234, 208, 0.045), transparent 24%),
+      rgba(10, 9, 9, 0.66);
+  }
+
+  .reborn-case-card {
+    border-style: dashed;
+    border-radius: 0.9rem;
+    background: rgba(12, 10, 9, 0.7);
+  }
+
+  .source-anchor-strip {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 1.25rem;
+  }
+
+  .source-anchor-copy {
+    max-width: 38rem;
+    color: var(--stage-ink-soft);
+    font-size: 0.88rem;
+    line-height: 1.8;
+  }
+
+  .source-anchor-eyebrow {
+    margin: 0 0 0.35rem;
+    color: var(--stage-muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+  }
+
+  .source-anchor-list {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .source-anchor-card {
+    border-radius: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.025);
+    padding: 0.85rem;
+  }
+
+  .source-anchor-card h3 {
+    margin: 0;
+    color: var(--stage-paper);
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .source-anchor-card p {
+    margin: 0.35rem 0 0;
+    color: var(--stage-ink-soft);
+    font-size: 0.82rem;
+    line-height: 1.7;
+  }
+
   .stage-cta {
     display: inline-flex;
     align-items: center;
@@ -417,20 +684,23 @@
     position: absolute;
     inset: 0 0 auto;
     z-index: 40;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    display: grid;
+    grid-template-columns: minmax(0, auto) auto;
+    align-items: start;
     justify-content: space-between;
-    gap: 1rem;
-    padding: 1.1rem 1rem 0;
+    column-gap: 0.65rem;
+    row-gap: 0.55rem;
+    padding: calc(0.65rem + env(safe-area-inset-top)) calc(0.75rem + env(safe-area-inset-right)) 0 calc(0.75rem + env(safe-area-inset-left));
     animation: home-fade-up 420ms ease both;
   }
 
   .home-nav-brand {
     display: inline-flex;
+    min-width: 0;
+    max-width: 100%;
     align-items: center;
-    gap: 0.85rem;
-    padding: 0.55rem 0.75rem;
+    gap: 0.55rem;
+    padding: 0.45rem 0.6rem;
     border-radius: 999px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: rgba(10, 8, 8, 0.38);
@@ -439,20 +709,22 @@
 
   .home-nav-brand-mark {
     display: inline-flex;
+    flex: 0 0 auto;
     align-items: center;
     justify-content: center;
-    height: 2.6rem;
-    width: 2.6rem;
+    height: 2.2rem;
+    width: 2.2rem;
     border-radius: 999px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--stage-gold);
     font-family: var(--font-display);
-    font-size: 1.15rem;
+    font-size: 1rem;
     background: rgba(255, 255, 255, 0.04);
   }
 
   .home-nav-brand-copy {
     display: flex;
+    min-width: 0;
     flex-direction: column;
     gap: 0.15rem;
   }
@@ -464,6 +736,7 @@
   }
 
   .home-nav-brand-subtitle {
+    display: none;
     font-size: 0.64rem;
     letter-spacing: 0.28em;
     text-transform: uppercase;
@@ -472,14 +745,29 @@
 
   .home-nav-toggle {
     display: inline-flex;
+    flex: 0 0 auto;
     align-items: center;
     justify-content: center;
-    min-width: 4.5rem;
+    height: 2.65rem;
+    width: 2.65rem;
     border-radius: 999px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     background: rgba(10, 8, 8, 0.42);
-    padding: 0.78rem 1rem;
+    padding: 0;
     color: var(--stage-paper);
+  }
+
+  .home-nav-toggle-lines {
+    display: inline-grid;
+    width: 1rem;
+    gap: 0.22rem;
+  }
+
+  .home-nav-toggle-lines span {
+    display: block;
+    height: 1px;
+    border-radius: 999px;
+    background: currentColor;
   }
 
   .home-nav-links {
@@ -491,7 +779,17 @@
   }
 
   .home-nav-links.is-open {
-    display: flex;
+    display: grid;
+  }
+
+  .home-nav-links-mobile {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-radius: 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(10, 8, 8, 0.72);
+    padding: 0.55rem;
+    backdrop-filter: blur(14px);
   }
 
   .home-nav-link {
@@ -501,8 +799,8 @@
     border-radius: 999px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     background: rgba(255, 255, 255, 0.03);
-    padding: 0.75rem 1rem;
-    font-size: 0.92rem;
+    padding: 0.68rem 0.8rem;
+    font-size: 0.86rem;
     color: var(--stage-ink-soft);
     transition:
       border-color 180ms ease,
@@ -748,15 +1046,7 @@
   }
 
   .home-nav-overlay {
-    padding: 0.85rem 0.75rem 0;
-  }
-
-  .home-nav-brand {
-    padding-right: 0.65rem;
-  }
-
-  .home-nav-brand-subtitle {
-    letter-spacing: 0.18em;
+    max-width: 100%;
   }
 
   .home-guide-card {
@@ -774,14 +1064,42 @@
 }
 
 @media (min-width: 641px) {
+  .home-nav-overlay {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 1rem 0;
+  }
+
+  .home-nav-brand {
+    gap: 0.85rem;
+    padding: 0.55rem 0.75rem;
+  }
+
+  .home-nav-brand-mark {
+    height: 2.6rem;
+    width: 2.6rem;
+    font-size: 1.15rem;
+  }
+
+  .home-nav-brand-subtitle {
+    display: block;
+  }
+
   .home-nav-toggle {
     display: none;
   }
 
-  .home-nav-links {
+  .home-nav-links-desktop {
     display: flex;
     width: auto;
+    flex-wrap: wrap;
     justify-content: flex-end;
+  }
+
+  .home-nav-links.home-nav-links-mobile {
+    display: none;
   }
 
   .home-guide-deck {

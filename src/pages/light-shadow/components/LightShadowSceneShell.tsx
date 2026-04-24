@@ -64,13 +64,11 @@ export function LightShadowSceneShell({
         <L1HeroStage
           activeCharacter={activeCharacter}
           inputMode={inputMode}
-          intro={pageEntry.meta.intro}
-          kicker={pageEntry.kicker}
           lampRender={lampRender}
           onLampInput={onLampInput}
           onLampInputEnd={onLampInputEnd}
+          operationHint="按住幕面移动灯位"
           scenePhase={scenePhase}
-          subtitle={pageEntry.meta.subtitle}
           switcher={
             <CharacterOnStageSwitcher
               activeCharacter={activeCharacter}

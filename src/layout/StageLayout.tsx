@@ -18,6 +18,7 @@ export function StageLayout() {
   const location = useLocation()
   const outlet = useOutlet()
   const isHomeRoute = location.pathname === '/'
+  const isLightShadowRoute = location.pathname === '/light-shadow'
 
   return (
     <div className="relative isolate min-h-screen overflow-hidden bg-[var(--stage-bg)] text-[var(--stage-paper)]">
@@ -27,32 +28,62 @@ export function StageLayout() {
       <div
         className={[
           'relative mx-auto flex min-h-screen w-full flex-col',
-          isHomeRoute ? 'max-w-none px-0 pb-0 pt-0' : 'max-w-7xl px-4 pb-10 pt-6 sm:px-6 lg:px-8',
+          isHomeRoute
+            ? 'max-w-none px-0 pb-0 pt-0'
+            : isLightShadowRoute
+              ? 'max-w-7xl px-4 pb-10 pt-3 sm:px-6 lg:px-8'
+              : 'max-w-7xl px-4 pb-10 pt-6 sm:px-6 lg:px-8',
         ].join(' ')}
       >
         {!isHomeRoute ? (
-          <header className="stage-panel sticky top-4 z-20 mb-6 flex flex-col gap-4 px-5 py-4 backdrop-blur sm:px-6 lg:flex-row lg:items-center lg:justify-between">
+          <header
+            className={[
+              isLightShadowRoute
+                ? 'mb-3 flex flex-col gap-3 rounded-2xl border border-white/10 bg-[rgba(8,7,7,0.42)] px-4 py-2.5 backdrop-blur-sm sm:px-5 lg:flex-row lg:items-center lg:justify-between'
+                : 'stage-panel sticky top-4 z-20 mb-6 flex flex-col gap-4 px-5 py-4 backdrop-blur sm:px-6 lg:flex-row lg:items-center lg:justify-between',
+            ].join(' ')}
+          >
             <NavLink className="flex items-center gap-4" to="/">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/12 bg-[rgba(255,255,255,0.04)] font-display text-xl text-[var(--stage-gold)]">
+              <span
+                className={[
+                  'inline-flex items-center justify-center rounded-full border border-white/12 bg-[rgba(255,255,255,0.04)] font-display text-[var(--stage-gold)]',
+                  isLightShadowRoute ? 'h-9 w-9 text-base' : 'h-12 w-12 text-xl',
+                ].join(' ')}
+              >
                 影
               </span>
               <div className="space-y-1">
-                <p className="font-display text-xl text-[var(--stage-paper)] sm:text-2xl">
+                <p
+                  className={[
+                    'font-display text-[var(--stage-paper)]',
+                    isLightShadowRoute ? 'text-lg sm:text-xl' : 'text-xl sm:text-2xl',
+                  ].join(' ')}
+                >
                   一戏入影
                 </p>
-                <p className="text-[10px] uppercase tracking-[0.24em] text-[var(--stage-muted)] sm:text-xs sm:tracking-[0.35em]">
-                  Shadow Puppet Theatre
-                </p>
+                {!isLightShadowRoute ? (
+                  <p className="text-[10px] uppercase tracking-[0.24em] text-[var(--stage-muted)] sm:text-xs sm:tracking-[0.35em]">
+                    Shadow Puppet Theatre
+                  </p>
+                ) : null}
               </div>
             </NavLink>
 
-            <nav aria-label="主导航" className="flex flex-wrap gap-2">
+            <nav
+              aria-label="主导航"
+              className={[
+                'flex flex-wrap',
+                isLightShadowRoute ? 'gap-1.5' : 'gap-2',
+              ].join(' ')}
+            >
               {themeRoutes.map((entry) => (
                 <NavLink
                   key={entry.path}
                   className={({ isActive }) =>
                     [
-                      'rounded-full border px-4 py-2 text-sm transition',
+                      isLightShadowRoute
+                        ? 'rounded-full border px-3 py-1.5 text-xs transition'
+                        : 'rounded-full border px-4 py-2 text-sm transition',
                       isActive
                         ? 'border-[rgba(240,197,112,0.32)] bg-[rgba(240,197,112,0.1)] text-[var(--stage-paper)]'
                         : 'border-white/10 bg-[rgba(255,255,255,0.03)] text-[var(--stage-ink-soft)] hover:border-white/20 hover:text-[var(--stage-paper)]',

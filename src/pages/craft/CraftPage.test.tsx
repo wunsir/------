@@ -70,4 +70,21 @@ describe('CraftPage', () => {
     expect(screen.queryByText('匠作录：刀与光的契约')).not.toBeInTheDocument()
     expect(screen.queryByText('结骨录：牵丝引线')).not.toBeInTheDocument()
   })
+
+  it('shows restrained source anchors and a workbench grammar', () => {
+    const { container } = render(
+      <MemoryRouter>
+        <CraftPage />
+      </MemoryRouter>,
+    )
+
+    expect(screen.getByText('工艺案台')).toBeInTheDocument()
+    expect(screen.getByText('资料锚点')).toBeInTheDocument()
+    expect(screen.getByText('国家级非遗名录：华县皮影戏（陕西渭南）')).toBeInTheDocument()
+    expect(screen.getByText('国家级非遗名录：唐山皮影戏（河北唐山）')).toBeInTheDocument()
+    expect(screen.getByText('剧团演示资料（幕后操演与关节联动）')).toBeInTheDocument()
+
+    expect(container.querySelector('.craft-workbench-hero')).toBeInTheDocument()
+    expect(container.querySelector('.craft-process-card')).toBeInTheDocument()
+  })
 })

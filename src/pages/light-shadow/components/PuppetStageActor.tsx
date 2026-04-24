@@ -51,12 +51,12 @@ export function PuppetStageActor({
         />
       </div>
 
-      <div className="absolute right-4 top-4 rounded-2xl border border-white/10 bg-[rgba(9,8,8,0.52)] px-3 py-2 text-right">
-        <p className="text-[11px] uppercase tracking-[0.28em] text-[var(--stage-muted)]">当前上场</p>
-        <p className="font-display text-2xl text-[var(--stage-paper)]" data-testid="stage-actor-name">
+      <div className="absolute right-4 top-4 hidden rounded-2xl border border-white/10 bg-[rgba(9,8,8,0.52)] px-3 py-2 text-right sm:block">
+        <p className="hidden text-[11px] uppercase tracking-[0.28em] text-[var(--stage-muted)] sm:block">当前上场</p>
+        <p className="hidden font-display text-2xl text-[var(--stage-paper)] sm:block" data-testid="stage-actor-name">
           {character.name}
         </p>
-        <p className="text-xs text-[var(--stage-ink-soft)]">{character.roleType}</p>
+        <p className="hidden text-xs text-[var(--stage-ink-soft)] sm:block">{character.roleType}</p>
       </div>
     </div>
   )

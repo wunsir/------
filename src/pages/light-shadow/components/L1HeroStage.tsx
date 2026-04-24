@@ -11,9 +11,7 @@ import { PuppetStageActor } from './PuppetStageActor'
 import { SceneFallbackPlayer } from './SceneFallbackPlayer'
 
 type L1HeroStageProps = {
-  intro: string
-  kicker: string
-  subtitle: string
+  operationHint: string
   title: string
   activeCharacter: CharacterCard
   inputMode: LightShadowInputMode
@@ -58,9 +56,7 @@ function deriveLightingMetrics(position: LightPosition): LightingMetrics {
 }
 
 export function L1HeroStage({
-  intro,
-  kicker,
-  subtitle,
+  operationHint,
   title,
   activeCharacter,
   inputMode,
@@ -96,15 +92,15 @@ export function L1HeroStage({
     >
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.22),rgba(0,0,0,0.52))]" data-testid="dark-stage" />
 
-      <header className="relative z-10 mb-6 max-w-3xl space-y-3">
-        <p className="text-xs uppercase tracking-[0.42em] text-[var(--stage-muted)]">{kicker}</p>
+      <header className="relative z-10 mb-4 max-w-2xl space-y-2 sm:mb-5">
         <h1 className="font-display text-4xl text-[var(--stage-paper)] sm:text-6xl">{title}</h1>
-        <p className="text-base leading-8 text-[var(--stage-paper)]/90 sm:text-xl">{subtitle}</p>
-        <p className="text-sm leading-7 text-[var(--stage-ink-soft)] sm:text-base">{intro}</p>
+        <p className="text-xs uppercase tracking-[0.24em] text-[var(--stage-muted)] sm:text-sm">
+          {operationHint}
+        </p>
       </header>
 
-      <div className="relative z-10 grid gap-4 xl:grid-cols-[minmax(0,1fr)_20rem] xl:items-stretch">
-        <div className="l1-paper-stage relative min-h-[24rem] overflow-hidden rounded-[1.8rem] border border-white/12 bg-[linear-gradient(180deg,rgba(230,206,165,0.12),rgba(20,15,12,0.55))]" data-testid="paper-screen">
+      <div className="relative z-10 space-y-3 sm:space-y-4">
+        <div className="l1-paper-stage relative min-h-[22rem] overflow-hidden rounded-[1.8rem] border border-white/12 bg-[linear-gradient(180deg,rgba(230,206,165,0.12),rgba(20,15,12,0.55))] sm:min-h-[25rem]" data-testid="paper-screen">
           <div
             className="pointer-events-none absolute -left-8 top-[-4rem] h-[17rem] w-[22rem] rounded-[50%] bg-[radial-gradient(circle,rgba(255,204,120,0.72),rgba(255,178,87,0.08)_60%,rgba(255,178,87,0)_72%)] blur-md"
             data-testid="lamp-beam"
@@ -131,12 +127,12 @@ export function L1HeroStage({
           <LampInputSurface onInput={onLampInput} onInputEnd={onLampInputEnd} />
           <SceneFallbackPlayer active={scenePhase === 'auto-demo'} />
 
-          <p className="pointer-events-none absolute bottom-4 right-4 rounded-full border border-white/12 bg-[rgba(9,8,8,0.44)] px-3 py-1 text-[11px] uppercase tracking-[0.26em] text-[var(--stage-muted)]">
-            {inputMode === 'touch' ? '触摸控灯' : inputMode === 'mouse' ? '鼠标控灯' : '无输入自动演示'}
+          <p className="pointer-events-none absolute bottom-4 right-4 hidden rounded-full border border-white/12 bg-[rgba(9,8,8,0.34)] px-3 py-1 text-[11px] uppercase tracking-[0.26em] text-[var(--stage-muted)] sm:block">
+            {inputMode === 'touch' ? '拖动控灯' : inputMode === 'mouse' ? '移动控灯' : '自动演示'}
           </p>
         </div>
 
-        <aside className="relative z-10">{switcher}</aside>
+        <div className="mx-auto w-full max-w-4xl">{switcher}</div>
       </div>
     </section>
   )

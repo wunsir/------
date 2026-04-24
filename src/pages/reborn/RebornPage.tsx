@@ -7,6 +7,67 @@ import {
   rebornTimeline,
   rebornTracks,
 } from './rebornContent'
+import { rebornSourceShortlist } from './rebornSources'
+
+const rebornAnchorSources = [
+  rebornSourceShortlist[0],
+  rebornSourceShortlist[1],
+  rebornSourceShortlist[2],
+]
+
+function RebornArchiveHero() {
+  return (
+    <aside className="reborn-archive-hero">
+      <div className="reborn-archive-hero-topline">
+        <span>转译档案</span>
+        <span>outline / motif / media</span>
+      </div>
+      <div className="reborn-archive-board" aria-hidden="true">
+        <div className="reborn-archive-sheet reborn-archive-sheet-one" />
+        <div className="reborn-archive-sheet reborn-archive-sheet-two" />
+        <div className="reborn-motif-frame">
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className="reborn-archive-tag">visual update</div>
+      </div>
+      <dl className="reborn-archive-notes">
+        <div>
+          <dt>视觉再设计</dt>
+          <dd>先保留剪影和行当识别，再压缩纹样。</dd>
+        </div>
+        <div>
+          <dt>辅助更新</dt>
+          <dd>展陈、传播和表演只作为进入路径。</dd>
+        </div>
+      </dl>
+    </aside>
+  )
+}
+
+function RebornSourceAnchors() {
+  return (
+    <aside aria-labelledby="reborn-source-anchor-title" className="source-anchor-strip reborn-source-strip">
+      <div className="source-anchor-copy">
+        <p id="reborn-source-anchor-title" className="source-anchor-eyebrow">
+          来源线索
+        </p>
+        <p>
+          页面只保留与视觉更新直接相关的公开线索，传播和表演资料作为辅助依据呈现。
+        </p>
+      </div>
+      <div className="source-anchor-list">
+        {rebornAnchorSources.map((source) => (
+          <article key={source.id} className="source-anchor-card">
+            <h3>{source.anchor}</h3>
+            <p>{source.focus}</p>
+          </article>
+        ))}
+      </div>
+    </aside>
+  )
+}
 
 export function RebornPage() {
   const pageEntry = themeRouteBySlug.reborn
@@ -20,16 +81,17 @@ export function RebornPage() {
         kicker={pageEntry.kicker}
         subtitle={pageEntry.meta.subtitle}
         title={pageEntry.meta.title}
+        aside={<RebornArchiveHero />}
       />
 
       <SectionBlock
-        description="当代新生页先让用户看到演变链路：它怎样改入口、改媒介、改叙事，但仍保留皮影最核心的辨识度。"
-        eyebrow="新幕开场"
-        title="让旧影继续进入今天"
+        description="当代新生页先看视觉怎样被重新整理：轮廓、纹样、比例和媒介入口改变，但剪影识别仍要成立。"
+        eyebrow="视觉链路"
+        title="旧影进入今天，先从视觉句法开始"
       >
         <div className="grid gap-4 lg:grid-cols-2">
           {rebornTimeline.map((item, index) => (
-            <article key={item.id} className="stage-card space-y-4">
+            <article key={item.id} className="stage-card reborn-dossier-card space-y-4">
               <div className="flex items-end justify-between gap-3">
                 <span className="font-display text-3xl text-[var(--stage-paper)]">
                   0{index + 1}
@@ -50,13 +112,13 @@ export function RebornPage() {
       </SectionBlock>
 
       <SectionBlock
-        description="角色卡模块不去追求炫技，而是把当代改写落在具体人物上：哪一部分被删减，哪一部分被放大，为什么仍然像皮影。"
-        eyebrow="角色改写"
-        title="角色先被重写，气质才会变成今天的语言"
+        description="角色卡模块把当代改写落在具体人物上：哪一部分被删减，哪一部分被放大，为什么仍然像皮影。"
+        eyebrow="视觉档案"
+        title="先改轮廓、纹样和媒介语法"
       >
         <div className="grid gap-4 lg:grid-cols-3">
           {rebornCharacters.map((card) => (
-            <article key={card.id} className="stage-card space-y-5">
+            <article key={card.id} className="stage-card reborn-dossier-card space-y-5">
               <div className="space-y-3">
                 <div className="flex items-center justify-between gap-3">
                   <h3 className="font-display text-3xl text-[var(--stage-paper)]">
@@ -106,13 +168,13 @@ export function RebornPage() {
       </SectionBlock>
 
       <SectionBlock
-        description="展演与案例模块负责把“更新”落在真实观看经验上，让用户看到皮影如何离开传统戏台，却没有失去现场感。"
-        eyebrow="当代表演"
-        title="当代案例不是注脚，而是新的演出现场"
+        description="展演与案例模块只做辅助线：让用户看到皮影如何离开传统戏台，同时不让技术效果盖过视觉识别。"
+        eyebrow="传播与表演"
+        title="传播和表演，服务于视觉更新的入口"
       >
         <div className="grid gap-4 lg:grid-cols-2">
           {rebornPlays.map((play) => (
-            <article key={play.id} className="stage-card space-y-5">
+            <article key={play.id} className="stage-card reborn-case-card space-y-5">
               <div className="space-y-3">
                 <p className="text-xs uppercase tracking-[0.32em] text-[var(--stage-muted)]">
                   {play.stageMood}
@@ -158,7 +220,7 @@ export function RebornPage() {
       >
         <div className="grid gap-4 lg:grid-cols-3">
           {rebornTracks.map((track) => (
-            <article key={track.id} className="stage-card space-y-5">
+            <article key={track.id} className="stage-card reborn-dossier-card space-y-5">
               <div className="space-y-3">
                 <p className="text-xs uppercase tracking-[0.32em] text-[var(--stage-muted)]">
                   更新脉络
@@ -187,6 +249,7 @@ export function RebornPage() {
             </article>
           ))}
         </div>
+        <RebornSourceAnchors />
       </SectionBlock>
     </div>
   )

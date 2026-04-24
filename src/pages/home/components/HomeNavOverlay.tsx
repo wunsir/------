@@ -24,22 +24,9 @@ export function HomeNavOverlay({ visible }: HomeNavOverlayProps) {
         </span>
       </NavLink>
 
-      <button
-        aria-controls="home-nav-links"
-        aria-expanded={menuOpen}
-        className="home-nav-toggle"
-        type="button"
-        onClick={() => {
-          setMenuOpen((current) => !current)
-        }}
-      >
-        章节
-      </button>
-
       <nav
         aria-label="首页主导航"
-        className={`home-nav-links ${menuOpen ? 'is-open' : ''}`}
-        id="home-nav-links"
+        className="home-nav-links home-nav-links-desktop"
       >
         {themeRoutes.map((entry) => (
           <NavLink
@@ -54,6 +41,44 @@ export function HomeNavOverlay({ visible }: HomeNavOverlayProps) {
           </NavLink>
         ))}
       </nav>
+
+      <button
+        aria-controls="home-mobile-nav-links"
+        aria-expanded={menuOpen}
+        aria-label={menuOpen ? '关闭首页章节菜单' : '打开首页章节菜单'}
+        className="home-nav-toggle"
+        type="button"
+        onClick={() => {
+          setMenuOpen((current) => !current)
+        }}
+      >
+        <span className="home-nav-toggle-lines" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </span>
+      </button>
+
+      {menuOpen ? (
+        <nav
+          aria-label="首页移动章节菜单"
+          className="home-nav-links home-nav-links-mobile is-open"
+          id="home-mobile-nav-links"
+        >
+          {themeRoutes.map((entry) => (
+            <NavLink
+              key={entry.path}
+              className={({ isActive }) =>
+                ['home-nav-link', isActive ? 'is-active' : ''].join(' ').trim()
+              }
+              end={entry.path === '/'}
+              to={entry.path}
+            >
+              {entry.navLabel}
+            </NavLink>
+          ))}
+        </nav>
+      ) : null}
     </header>
   )
 }

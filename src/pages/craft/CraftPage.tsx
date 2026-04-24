@@ -7,6 +7,66 @@ import {
   craftPlays,
   craftTimeline,
 } from './craftContent'
+import { craftSourceShortlist } from './craftSources'
+
+const craftAnchorSources = [
+  craftSourceShortlist[0],
+  craftSourceShortlist[1],
+  craftSourceShortlist[4],
+]
+
+function CraftWorkbenchHero() {
+  return (
+    <aside className="craft-workbench-hero">
+      <div className="craft-workbench-hero-topline">
+        <span>工艺案台</span>
+        <span>material / knife / joint</span>
+      </div>
+      <div className="craft-workbench-surface" aria-hidden="true">
+        <div className="craft-hide-sheet" />
+        <div className="craft-cutting-grid" />
+        <div className="craft-tool craft-tool-knife" />
+        <div className="craft-tool craft-tool-awl" />
+        <div className="craft-joint-dot craft-joint-dot-one" />
+        <div className="craft-joint-dot craft-joint-dot-two" />
+        <div className="craft-joint-dot craft-joint-dot-three" />
+      </div>
+      <dl className="craft-workbench-notes">
+        <div>
+          <dt>透光校验</dt>
+          <dd>厚薄、纹孔、色层先在灯下看清楚。</dd>
+        </div>
+        <div>
+          <dt>关节定位</dt>
+          <dd>头杆与手杆的位置决定抬手和回身。</dd>
+        </div>
+      </dl>
+    </aside>
+  )
+}
+
+function CraftSourceAnchors() {
+  return (
+    <aside aria-labelledby="craft-source-anchor-title" className="source-anchor-strip craft-source-strip">
+      <div className="source-anchor-copy">
+        <p id="craft-source-anchor-title" className="source-anchor-eyebrow">
+          资料锚点
+        </p>
+        <p>
+          页面只露出少量可追溯线索，帮助用户知道材料、刀工与关节判断来自公开非遗与操演资料。
+        </p>
+      </div>
+      <div className="source-anchor-list">
+        {craftAnchorSources.map((source) => (
+          <article key={source.id} className="source-anchor-card">
+            <h3>{source.anchor}</h3>
+            <p>{source.focus}</p>
+          </article>
+        ))}
+      </div>
+    </aside>
+  )
+}
 
 export function CraftPage() {
   const pageEntry = themeRouteBySlug.craft
@@ -20,6 +80,7 @@ export function CraftPage() {
         kicker={pageEntry.kicker}
         subtitle={pageEntry.meta.subtitle}
         title={pageEntry.meta.title}
+        aside={<CraftWorkbenchHero />}
       />
 
       <SectionBlock
@@ -29,7 +90,7 @@ export function CraftPage() {
       >
         <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
           {craftTimeline.map((item, index) => (
-            <article key={item.id} className="stage-card space-y-4">
+            <article key={item.id} className="stage-card craft-process-card space-y-4">
               <div className="flex items-end justify-between gap-3">
                 <span className="font-display text-3xl text-[var(--stage-gold)]">
                   0{index + 1}
@@ -56,7 +117,7 @@ export function CraftPage() {
       >
         <div className="grid gap-4 lg:grid-cols-3">
           {craftCharacters.map((card) => (
-            <article key={card.id} className="stage-card space-y-5">
+            <article key={card.id} className="stage-card craft-sample-card space-y-5">
               <div className="space-y-3">
                 <div className="flex items-center justify-between gap-3">
                   <h3 className="font-display text-3xl text-[var(--stage-paper)]">
@@ -112,7 +173,7 @@ export function CraftPage() {
       >
         <div className="grid gap-4 lg:grid-cols-2">
           {craftPlays.map((play) => (
-            <article key={play.id} className="stage-card space-y-5">
+            <article key={play.id} className="stage-card craft-sample-card space-y-5">
               <div className="space-y-3">
                 <p className="text-xs uppercase tracking-[0.32em] text-[var(--stage-muted)]">
                   {play.stageMood}
@@ -158,7 +219,7 @@ export function CraftPage() {
       >
         <div className="grid gap-4 lg:grid-cols-2">
           {craftLayers.map((layer) => (
-            <article key={layer.id} className="stage-card space-y-5">
+            <article key={layer.id} className="stage-card craft-layer-card space-y-5">
               <div className="flex items-start justify-between gap-3">
                 <div className="space-y-3">
                   <p className="text-xs uppercase tracking-[0.32em] text-[var(--stage-muted)]">
@@ -192,6 +253,7 @@ export function CraftPage() {
             </article>
           ))}
         </div>
+        <CraftSourceAnchors />
       </SectionBlock>
     </div>
   )
